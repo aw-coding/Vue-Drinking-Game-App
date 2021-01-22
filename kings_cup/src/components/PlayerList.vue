@@ -24,6 +24,7 @@ export default {
     mounted () {
         
         eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
+        eventBus.$on('player-deleted', playerToDelete => this.players.splice(playerToDelete, 1))
         
     },
     components: {
