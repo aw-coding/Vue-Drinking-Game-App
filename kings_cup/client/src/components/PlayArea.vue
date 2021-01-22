@@ -2,8 +2,10 @@
     <div>
         <h1>Play Area</h1>
         <button v-on:click='getData'>New Game</button>
-        <button v-on:click='drawCard'>Get a card</button>
-        <img :src='currentCard.image'> 
+        <button v-on:click='drawCard'>Get a card</button><br>
+        <h2> {{currentRule.name}}</h2>
+        <p> {{currentRule.text}}</p>
+        <img :src='currentCard.image'>
 
     </div>
   
@@ -15,7 +17,9 @@ export default {
     data () {
         return {
             deck: null,
-            currentCard: ''
+            currentCard: '',
+            rules: null,
+            currentRule: ''
         }
     },
     methods: {
@@ -24,17 +28,22 @@ export default {
             .then(res => res.json())
             .then(data => this.deck = data.cards)
         },
+        
+        
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
             this.deck.splice(randomNumber, 1)
+            const rule = this.rules.filter(rule => this.currentCard.value === rule.value)
+            this.currentRule = rule[0]
         }
     },
 
     mounted () {
-        
-        
-    },
+            fetch('http://localhost:3000/api/rules')
+            .then(res => res.json())
+            .then(rules => this.rules = rules)
+    }
 }
 </script>
 

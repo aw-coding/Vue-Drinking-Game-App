@@ -3,7 +3,7 @@ db.dropDatabase();
 
 db.default_rules.insertMany([
     {
-        name: "Waterful",
+        name: "Waterfall",
         text: "Rule",
         value: "ACE"
     },
