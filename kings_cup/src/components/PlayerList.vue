@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
+
 export default {
     name: 'player-list',
     methods: {
@@ -12,8 +14,13 @@ export default {
     },
     data () {
         return {
-            players: ['simon', 'ewan', 'andrew'],
+            players: [],
         }
+    },
+    mounted () {
+        
+        eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
+        
     }
     
 
