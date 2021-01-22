@@ -34,4 +34,5 @@ Advanced Extensions:
     - Have messages show at various levels - e.g "You're now not legal to drive", "Go to bed, you're drunk"
     - Enable player avatar selection
     - Include other simple card games? E.g higher or lower, cheat
+	- Be able to use multiple decks
     - Have really fancy CSS
