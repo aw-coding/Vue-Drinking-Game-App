@@ -1,6 +1,7 @@
 <template>
     <div>
         <add-player-tile></add-player-tile>
+        <play-area></play-area>
 
     </div>
   
@@ -8,6 +9,7 @@
 
 <script>
 import AddPlayerTile from '@/components/AddPlayerTile.vue'
+import PlayArea from '@/components/PlayArea.vue'
 
 export default {
     name: 'game-tile',
@@ -28,7 +30,8 @@ export default {
         
     },
     components: {
-        'add-player-tile': AddPlayerTile
+        'add-player-tile': AddPlayerTile,
+        'play-area': PlayArea
     }
         
     
