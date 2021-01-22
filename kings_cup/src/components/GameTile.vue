@@ -23,29 +23,17 @@ export default {
         }
     },
     methods: {
-        getData: function () {
-            fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-            .then(res => res.json())
-            .then(data => this.deck = data.cards)
-        },
+
         changePage: function (page) {
             this.currentPage = page
-        }    
-        },
-    mounted () {
-        this.getData()
-        
-    },
+        },    
+    },    
+
+
     components: {
         'add-player-tile': AddPlayerTile,
         'play-area': PlayArea
     }
-        
-    
-
-    
-
-
 
 }
 </script>
