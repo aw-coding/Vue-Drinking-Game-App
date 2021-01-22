@@ -4,6 +4,7 @@
         <button v-on:click="changePage('play-area')">Play Area</button>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
         <play-area v-if="currentPage==='play-area'"></play-area>
+        <player-list></player-list>
         
 
     </div>
@@ -13,6 +14,7 @@
 <script>
 import AddPlayerTile from '@/components/AddPlayerTile.vue'
 import PlayArea from '@/components/PlayArea.vue'
+import PlayerList from '@/components/PlayerList.vue'
 
 export default {
     name: 'game-tile',
@@ -32,7 +34,9 @@ export default {
 
     components: {
         'add-player-tile': AddPlayerTile,
-        'play-area': PlayArea
+        'play-area': PlayArea,
+        'player-list': PlayerList
+
     }
 
 }
