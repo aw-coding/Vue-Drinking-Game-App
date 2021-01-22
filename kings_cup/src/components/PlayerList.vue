@@ -1,11 +1,12 @@
 <template lang='html'>
   <div>
-      <li v-for="player in players">{{player}}</li>
+      <player-tile v-for="player in players" :player='player'></player-tile></player-tile>
   </div>
 </template>
 
 <script>
 import { eventBus } from '@/main.js'
+import PlayerTile from '@/components/PlayerTile.vue'
 
 export default {
     name: 'player-list',
@@ -17,10 +18,17 @@ export default {
             players: [],
         }
     },
+    methods: {
+
+    },
     mounted () {
         
         eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
         
+    },
+    components: {
+        'player-tile': PlayerTile
+
     }
     
 
@@ -28,6 +36,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
 
 </style>

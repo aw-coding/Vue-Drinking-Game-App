@@ -3,7 +3,7 @@
   <h1>New Player Form</h1>
   <form>
     <label for="Name"></label>
-    <input v-model='playerName' type='text' placeholder='name' >
+    <input v-model='playerName' required type='text' placeholder='name' >
     <button v-on:click='addPlayer'>Add Player</button>
 
   </form>
@@ -24,8 +24,10 @@ export default {
     },
     methods:{
       addPlayer: function (event) {
+        if (this.playerName) {
         event.preventDefault()
         eventBus.$emit('player-created', this.playerName)
+        this.playerName = ''}
       }
     }
 

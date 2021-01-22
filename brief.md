@@ -13,7 +13,8 @@ You might use persistence to keep track of the state of the game or track scores
 
 
 MVP: 
-	- Input a number of players and give them names, show them on screen
+	- Input a number of players and give them names, show them on screen ✓
+	- Be able to delete players
 	- Have players be able to take turns
 	- Utilise the deck of cards api ✓
 	- Draw a card from the deck and have the rule attached to that card show to the players (consider certain rules that require extra functionality)
