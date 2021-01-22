@@ -14,16 +14,17 @@ You might use persistence to keep track of the state of the game or track scores
 
 MVP: 
 	- Input a number of players and give them names, show them on screen ✓
-	- Be able to delete players
-	- Have players be able to take turns
+	- Be able to delete players ✓
 	- Utilise the deck of cards api ✓
 	- Draw a card from the deck and have the rule attached to that card show to the players (consider certain rules that require extra functionality)
 	- Have basic CSS - designed specifically for Zoom (big icons, big buttons etc)
-	- Have drink buttons for each player to track number of drinks
+	- Have players be able to take turns (CSS)
+
 
 Extensions :
 
 	- Track number of drinks, display on graph with google charts
+	- Have drink buttons for each player to track number of drinks
 	- have drink buttons for (all boys, all girls etc)
 	- Be able to check/edit card rules (have house rules)
 	- Chose player colours to display next to their name (and be able to cycle through a selection)
