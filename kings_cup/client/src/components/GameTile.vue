@@ -2,9 +2,11 @@
     <div>
         <button v-on:click="changePage('new-player')" >Add New Player</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
+        <div id="game-tile">
+        <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
         <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers"></play-area>
-        <player-list></player-list>
+        </div>
         
 
     </div>
@@ -34,6 +36,8 @@ export default {
     },
     mounted(){
         eventBus.$on('player-created', payload => this.numberOfPlayers += 1)
+        eventBus.$on('player-deleted', payload => this.numberOfPlayers -= 1)
+
     },    
     components: {
         'add-player-tile': AddPlayerTile,
@@ -46,5 +50,10 @@ export default {
 </script>
 
 <style>
+#game-tile{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
 
 </style>

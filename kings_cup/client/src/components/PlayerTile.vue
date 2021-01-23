@@ -1,7 +1,6 @@
 <template>
     <div id="player-tile" :class="player.isTurn">
-        <h1>{{player.name}}</h1>
-        <p>{{player.isTurn}}</p>
+        <h3>{{player.name}}</h3>
         <button v-on:click='deletePlayer'>Delete Player</button>
   </div>
 </template>

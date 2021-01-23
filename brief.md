@@ -12,7 +12,8 @@ You might use persistence to keep track of the state of the game or track scores
 
 TODO:
 
-	- fill in rules in database
+	- can't delete player before current player in array
+	- can't change tabs without restarting game
 	- 
 
 

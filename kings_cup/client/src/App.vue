@@ -25,9 +25,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
-  background: green;
+  text-align: center;
+}
+body {
+  background-image: url("https://previews.123rf.com/images/patterndesign/patterndesign1609/patterndesign160900127/63228196-seamless-background-pattern-card-suits-seamless-pattern-vector-illustration.jpg");
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <h1>Header Tile</h1>
+  <h1>Big Deck Energy Presents: King's Cup</h1>
 </template>
 
 <script>
