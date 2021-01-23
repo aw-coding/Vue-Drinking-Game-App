@@ -1,6 +1,6 @@
 <template>
 <div id="player-form">
-  <h1>New Player Form</h1>
+  <h2>New Player</h2>
   <form>
     <label for="Name"></label>
     <input v-model='playerName' required type='text' placeholder='name' >
@@ -44,6 +44,9 @@ export default {
 <style>
 #player-form{
   background: rgb(38, 38, 38);
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 </style>

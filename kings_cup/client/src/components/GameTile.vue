@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="nav">
-        <button v-on:click="changePage('new-player')" >Add New Player</button>
+        <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
         </div>
         <div id="game-tile">
@@ -64,10 +64,12 @@ export default {
     
 }
 #nav > button{
-    background: black;
-    color: white;
+    background: rgb(14, 14, 14);
+    color: rgb(187, 187, 187);
     padding: 10px;
-    border: 2px solid grey
+    border: 2px solid grey;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 

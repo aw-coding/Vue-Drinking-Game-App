@@ -26,6 +26,8 @@ export default {
 <style>
 #player-tile{
     background: rgb(87, 87, 87);
+    text-align: center;
+    border-radius: 10px;
 }
 
 .true{

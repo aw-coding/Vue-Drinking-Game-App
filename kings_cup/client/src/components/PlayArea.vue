@@ -2,9 +2,9 @@
     <div id="play-area">
         <h1></h1>
         <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
+        <img :src='currentCard.image' id="card">
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
-        <img :src='currentCard.image' id="card">
 
     </div>
   
@@ -15,7 +15,6 @@ export default {
     name: 'play-area',
     data () {
         return {
-            deck: null,
             currentCard: '',
             rules: null,
             currentRule: '',
@@ -60,10 +59,14 @@ export default {
 <style>
 #play-area{
     background: rgb(38, 38, 38);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 #draw-button{
-    width: 70px;
+    width: 102px;
     border-radius: 5px;
+    margin-right: 10px;
     
 }
 #card{
