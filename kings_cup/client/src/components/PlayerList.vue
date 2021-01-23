@@ -30,17 +30,16 @@ export default {
             this.numberOfPlayers = this.players.length
         }       
     },
-    mounted () {
-        eventBus.$emit('length-of-players-array', this.numberOfPlayers)
-        
+    mounted () {        
         eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
 
         eventBus.$on('player-deleted', playerToDelete => this.players.splice(playerToDelete, 1))
 
-        eventBus.$on('next-players-turn', playerTurn => this.this_players_turn = playerTurn)
-
-        
-        
+        eventBus.$on('next-players-turn', playerTurn => {
+            this.players.forEach(player => player.isTurn = false)
+            this.players[playerTurn].isTurn = true
+            
+            })  
     },
     components: {
         'player-tile': PlayerTile,
