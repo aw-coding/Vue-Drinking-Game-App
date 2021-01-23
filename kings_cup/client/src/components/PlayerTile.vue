@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <h1>{{player}}</h1>
+    <div id="player-tile">
+        <h1>{{player.name}}</h1>
+        <p>{{player.isTurn}}</p>
         <button v-on:click='deletePlayer'>Delete Player</button>
   </div>
 </template>
@@ -23,5 +24,8 @@ export default {
 </script>
 
 <style>
+#player-tile{
+    background: orange;
+}
 
 </style>

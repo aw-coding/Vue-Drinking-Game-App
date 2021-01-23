@@ -3,7 +3,7 @@
         <button v-on:click="changePage('new-player')" >Add New Player</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
-        <play-area v-if="currentPage==='play-area'"></play-area>
+        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers"></play-area>
         <player-list></player-list>
         
 
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
 import AddPlayerTile from '@/components/AddPlayerTile.vue'
 import PlayArea from '@/components/PlayArea.vue'
 import PlayerList from '@/components/PlayerList.vue'
@@ -22,6 +23,7 @@ export default {
         return {
             deck: null,
             currentPage: '',
+            numberOfPlayers: 0
         }
     },
     methods: {
@@ -29,9 +31,10 @@ export default {
         changePage: function (page) {
             this.currentPage = page
         },    
+    },
+    mounted(){
+        eventBus.$on('player-created', payload => this.numberOfPlayers += 1)
     },    
-
-
     components: {
         'add-player-tile': AddPlayerTile,
         'play-area': PlayArea,

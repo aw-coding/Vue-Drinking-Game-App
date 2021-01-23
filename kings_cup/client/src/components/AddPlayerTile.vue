@@ -24,9 +24,12 @@ export default {
     },
     methods:{
       addPlayer: function (event) {
-        if (this.playerName) {
         event.preventDefault()
-        eventBus.$emit('player-created', this.playerName)
+        if (this.playerName) {
+        const newPlayer = {}
+        newPlayer.isTurn = false
+        newPlayer.name = this.playerName
+        eventBus.$emit('player-created', newPlayer)
         this.playerName = ''}
       }
     }

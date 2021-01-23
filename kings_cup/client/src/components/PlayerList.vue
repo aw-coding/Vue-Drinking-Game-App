@@ -1,6 +1,6 @@
 <template lang='html'>
-  <div>
-      <player-tile v-for="player in players" :player='player'></player-tile></player-tile>
+  <div id="player-list">
+      <player-tile v-for="player in players" :player='player'></player-tile>
   </div>
 </template>
 
@@ -16,19 +16,34 @@ export default {
     data () {
         return {
             players: [],
+            this_players_turn: null,
+            numberOfPlayers: null
+            
         }
     },
     methods: {
 
+
+    },
+    computed:{
+        numberOfPeoplePlaying: function(){
+            this.numberOfPlayers = this.players.length
+        }       
     },
     mounted () {
+        eventBus.$emit('length-of-players-array', this.numberOfPlayers)
         
         eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
+
         eventBus.$on('player-deleted', playerToDelete => this.players.splice(playerToDelete, 1))
+
+        eventBus.$on('next-players-turn', playerTurn => this.this_players_turn = playerTurn)
+
+        
         
     },
     components: {
-        'player-tile': PlayerTile
+        'player-tile': PlayerTile,
 
     }
     
@@ -38,5 +53,9 @@ export default {
 </script>
 
 <style>
+#player-list{
+    background: red;
+    padding: 10px;
+}
 
 </style>
