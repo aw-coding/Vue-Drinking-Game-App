@@ -36,8 +36,8 @@ export default {
         eventBus.$on('player-deleted', playerToDelete => this.players.splice(playerToDelete, 1))
 
         eventBus.$on('next-players-turn', playerTurn => {
-            this.players.forEach(player => player.isTurn = false)
-            this.players[playerTurn].isTurn = true
+            this.players.forEach(player => player.isTurn = "false")
+            this.players[playerTurn].isTurn = "true"
             
             })  
     },

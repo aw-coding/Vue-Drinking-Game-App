@@ -27,7 +27,7 @@ export default {
         event.preventDefault()
         if (this.playerName) {
         const newPlayer = {}
-        newPlayer.isTurn = false
+        newPlayer.isTurn = "false"
         newPlayer.name = this.playerName
         eventBus.$emit('player-created', newPlayer)
         this.playerName = ''}
