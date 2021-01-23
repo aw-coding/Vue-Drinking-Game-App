@@ -1,7 +1,9 @@
 <template>
     <div>
+        <div id="nav">
         <button v-on:click="changePage('new-player')" >Add New Player</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
+        </div>
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
@@ -59,6 +61,13 @@ export default {
 #game-tile{
     display: grid;
     grid-template-columns: 20% 80%;
+    
+}
+#nav > button{
+    background: black;
+    color: white;
+    padding: 10px;
+    border: 2px solid grey
 }
 
 

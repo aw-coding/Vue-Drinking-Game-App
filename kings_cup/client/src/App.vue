@@ -27,8 +27,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   margin-top: 60px;
   text-align: center;
+  color: rgb(187, 187, 187);
 }
 body {
-  background-image: url("https://previews.123rf.com/images/patterndesign/patterndesign1609/patterndesign160900127/63228196-seamless-background-pattern-card-suits-seamless-pattern-vector-illustration.jpg");
+  background: rgb(14, 14, 14);
 }
 </style>

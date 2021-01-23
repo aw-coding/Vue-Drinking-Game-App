@@ -53,8 +53,7 @@ export default {
 
 <style>
 #player-list{
-    background: red;
-    padding: 10px;
+    background: rgb(38, 38, 38);
 }
 
 </style>

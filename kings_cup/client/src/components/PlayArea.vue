@@ -1,11 +1,10 @@
 <template>
     <div id="play-area">
-        <h1>Play Area</h1>
-        <button>New Game</button>
-        <button v-on:click='drawCard'>Get a card</button><br>
+        <h1></h1>
+        <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
-        <img :src='currentCard.image'>
+        <img :src='currentCard.image' id="card">
 
     </div>
   
@@ -60,7 +59,15 @@ export default {
 
 <style>
 #play-area{
-    background: blue;
+    background: rgb(38, 38, 38);
+}
+#draw-button{
+    width: 70px;
+    border-radius: 5px;
+    
+}
+#card{
+    width: 100px
 }
 
 </style>

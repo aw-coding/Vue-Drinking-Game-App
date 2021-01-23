@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="player-form">
   <h1>New Player Form</h1>
   <form>
     <label for="Name"></label>
@@ -42,5 +42,8 @@ export default {
 </script>
 
 <style>
+#player-form{
+  background: rgb(38, 38, 38);
+}
 
 </style>
