@@ -1,7 +1,7 @@
 <template>
     <div id="play-area">
         <h1>Play Area</h1>
-        <button v-on:click='getData'>New Game</button>
+        <button>New Game</button>
         <button v-on:click='drawCard'>Get a card</button><br>
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
@@ -23,13 +23,13 @@ export default {
             turnCounter: 0
         }
     },
-    props: ['numberOfPlayers'],
+    props: ['numberOfPlayers', 'deck'],
     methods: {
-        getData: function () {
-            fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-            .then(res => res.json())
-            .then(data => this.deck = data.cards)
-        },
+        // getData: function () {
+        //     fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
+        //     .then(res => res.json())
+        //     .then(data => this.deck = data.cards)
+        // },
         
         
         drawCard: function () {

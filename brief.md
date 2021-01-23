@@ -14,15 +14,15 @@ TODO:
 
 	- can't delete player before current player in array
 	- can't change tabs without restarting game
-	- 
+	- have current card show when switching tabs
 
 
-MVP: 
+MVP: ✓
 	- Input a number of players and give them names, show them on screen ✓
 	- Be able to delete players ✓
 	- Utilise the deck of cards api ✓
 	- Draw a card from the deck and have the rule attached to that card show to the players (consider certain rules that require extra functionality) ✓
-	- Have basic CSS - designed specifically for Zoom (big icons, big buttons etc)
+	- Have basic CSS - designed specifically for Zoom (big icons, big buttons etc) ✓
 	- Have players be able to take turns (CSS) ✓
 
 

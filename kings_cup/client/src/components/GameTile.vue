@@ -5,7 +5,7 @@
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
-        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers"></play-area>
+        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck"></play-area>
         </div>
         
 
@@ -29,12 +29,18 @@ export default {
         }
     },
     methods: {
+        getData: function () {
+            fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
+            .then(res => res.json())
+            .then(data => this.deck = data.cards)
+        },
 
         changePage: function (page) {
             this.currentPage = page
         },    
     },
     mounted(){
+        this.getData()
         eventBus.$on('player-created', payload => this.numberOfPlayers += 1)
         eventBus.$on('player-deleted', payload => this.numberOfPlayers -= 1)
 
