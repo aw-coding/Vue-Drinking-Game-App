@@ -22,7 +22,7 @@ MVP:
 	- Utilise the deck of cards api ✓
 	- Draw a card from the deck and have the rule attached to that card show to the players (consider certain rules that require extra functionality) ✓
 	- Have basic CSS - designed specifically for Zoom (big icons, big buttons etc)
-	- Have players be able to take turns (CSS)
+	- Have players be able to take turns (CSS) ✓
 
 
 Extensions :
