@@ -29,6 +29,7 @@ MVP: ✓
 
 Extensions :
 
+	- make a rule display on screen
 	- Track number of drinks, display on graph with google charts
 	- Have drink buttons for each player to track number of drinks
 	- have drink buttons for (all boys, all girls etc)
