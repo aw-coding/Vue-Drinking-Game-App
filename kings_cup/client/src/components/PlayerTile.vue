@@ -1,6 +1,7 @@
 <template>
     <div id="player-tile" :class="[player.isTurn, player.colour]">
         <h3>{{player.name}}</h3>
+        <img id="avatar" :src="player.avatar" alt="">
         <!-- <button v-on:click='deletePlayer'>Delete Player</button> -->
         <img id="delete" v-on:click='deletePlayer' src="https://images.all-free-download.com/images/graphicthumb/round_red_close_button_5095.jpg" alt="">
   </div>
@@ -29,6 +30,10 @@ export default {
     text-align: center;
     border-radius: 10px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#avatar{
+    width: 70px;
+    border-radius: 50%;
 }
 
 .true{

@@ -3,10 +3,10 @@
   <h2>New Player</h2>
   <form>
     <label for="Name"></label>
-    <input v-model='playerName' required type='text' placeholder='name' >
-    <button v-on:click='addPlayer'>Add Player</button>
+    <input v-model='playerName' required type='text' placeholder='name'>
 
       <select v-model='playerColour' name="colours" id="player-colour">
+        <option value="" selected disabled hidden>Colour</option>
         <option value='red'>Red</option>
         <option value='blue'>Blue</option>
         <option value='yellow'>Yellow</option>
@@ -18,6 +18,22 @@
         <option value='white'>White</option>
         <option value='grey'>Grey</option>
       </select>
+
+    <select  id="avatar-select" name="avatar" v-model="playerAvatar" required>
+      <option value="" selected disabled hidden>Avatar</option>
+      <option value="https://avatarfiles.alphacoders.com/123/thumb-123713.jpg">Minion</option>
+      <option value="https://avatarfiles.alphacoders.com/166/thumb-166320.jpg">Pikachu</option>
+      <option value="https://avatarfiles.alphacoders.com/122/thumb-122641.jpg">Iron Man</option>
+      <option value="https://avatarfiles.alphacoders.com/182/thumb-182355.jpg">Joker</option>
+      <option value="https://avatarfiles.alphacoders.com/851/thumb-851.jpg">Yoda</option>
+      <option value="https://avatarfiles.alphacoders.com/226/thumb-226760.jpg">Baby Groot</option>
+      <option value="https://avatarfiles.alphacoders.com/161/thumb-161909.jpg">Micky Mouse</option>
+      <option value="https://avatarfiles.alphacoders.com/118/thumb-118721.jpg">Beaker</option>
+    </select>
+
+    <button v-on:click='addPlayer'>Add Player</button>
+
+    <img :src="playerAvatar" alt="">
     </form>
 
   </div>
@@ -32,7 +48,8 @@ export default {
     data () {
       return {
         playerName: '',
-        playerColour: ''
+        playerColour: '',
+        playerAvatar: ''
       }
     },
     methods:{
@@ -43,8 +60,12 @@ export default {
         newPlayer.isTurn = "false"
         newPlayer.name = this.playerName
         newPlayer.colour = this.playerColour
+        newPlayer.avatar = this.playerAvatar
         eventBus.$emit('player-created', newPlayer)
-        this.playerName = ''}
+        this.playerName = ''
+        this.playerColour = ''
+        this.playerAvatar = ''
+        }
       }
     }
 
