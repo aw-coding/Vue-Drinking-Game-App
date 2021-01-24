@@ -19,10 +19,10 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
-            turnCounter: 0
+            // turnCounter: 0
         }
     },
-    props: ['numberOfPlayers', 'deck'],
+    props: ['numberOfPlayers', 'deck', 'currentPlayer'],
     methods: {
         // getData: function () {
         //     fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
@@ -40,11 +40,11 @@ export default {
             this.deck.splice(randomNumber, 1)
             const rule = this.rules.filter(rule => this.currentCard.value === rule.value)
             this.currentRule = rule[0]
-            eventBus.$emit('next-players-turn', this.turnCounter)
-            this.turnCounter += 1
-            if(this.turnCounter === this.numberOfPlayers){
-                this.turnCounter = 0
-            }
+            eventBus.$emit('next-players-turn', this.currentPlayer)
+            // this.turnCounter += 1
+            // if(this.turnCounter === this.numberOfPlayers){
+            //     this.turnCounter = 0
+            // }
             
         },
         getNewDeck: function () {

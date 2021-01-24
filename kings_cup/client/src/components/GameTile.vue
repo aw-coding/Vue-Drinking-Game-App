@@ -9,7 +9,7 @@
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
-        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck"></play-area>
+        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer"></play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
 
         </div>
@@ -32,7 +32,8 @@ export default {
         return {
             deck: null,
             currentPage: '',
-            numberOfPlayers: 0
+            numberOfPlayers: 0,
+            currentPlayer: 0
         }
     },
     methods: {
@@ -51,6 +52,12 @@ export default {
         eventBus.$on('player-created', payload => this.numberOfPlayers += 1)
         eventBus.$on('player-deleted', payload => this.numberOfPlayers -= 1)
         eventBus.$on('need-new-deck', payload => this.getData())
+        eventBus.$on('next-players-turn', payload => {
+            this.currentPlayer += 1
+            if (this.currentPlayer === this.numberOfPlayers){
+                this.currentPlayer = 0
+            }
+        })
 
 
     },    
