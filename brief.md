@@ -12,9 +12,10 @@ You might use persistence to keep track of the state of the game or track scores
 
 TODO:
 
-	- can't delete player before current player in array
-	- can't change tabs without restarting game
+	- can't delete player before current player in array ✓
+	- can't change tabs without restarting game ✓
 	- have current card show when switching tabs
+	- when you delete a player it messes up turn counter
 
 
 MVP: ✓
