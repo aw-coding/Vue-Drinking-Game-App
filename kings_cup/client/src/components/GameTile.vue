@@ -66,7 +66,7 @@ export default {
 <style>
 #game-tile{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 200px auto;
     
 }
 #nav > button{
