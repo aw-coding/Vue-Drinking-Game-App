@@ -1,6 +1,13 @@
-<template>
-<div>
-
+<template lang="html">
+<div id="rules-tile">
+    <ul>
+        <li v-for="(rule, index) in rules" >
+        <h3>{{rule.value}}</h3>     
+        <h4>{{rule.name}}</h4>  
+        <p>{{rule.text}}</p>    
+    
+        </li>
+    </ul>
 
 </div>
   
@@ -26,5 +33,11 @@ export default {
 </script>
 
 <style>
+
+#rules-tile{
+    overflow-y: scroll;
+    height: 700px;
+    
+}
 
 </style>
