@@ -20,12 +20,7 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
-<<<<<<< HEAD
-            // turnCounter: 0
-=======
-            turnCounter: 0,
             kingCounter: 0, //the game should end when this reaches 4 
->>>>>>> 6dd3816a729d18116e159a032c7b9519dee2737d
         }
     },
     props: ['numberOfPlayers', 'deck', 'currentPlayer'],
