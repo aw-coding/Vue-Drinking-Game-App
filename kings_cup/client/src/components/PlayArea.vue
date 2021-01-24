@@ -5,6 +5,7 @@
         <img :src='currentCard.image' id="card">
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
+        <p>Cards Remaining: {{this.deck.length}}</p>
         <button v-on:click='getNewDeck'>Get a New Deck</button>
 
     </div>
@@ -19,22 +20,19 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
+<<<<<<< HEAD
             // turnCounter: 0
+=======
+            turnCounter: 0,
+            kingCounter: 0, //the game should end when this reaches 4 
+>>>>>>> 6dd3816a729d18116e159a032c7b9519dee2737d
         }
     },
     props: ['numberOfPlayers', 'deck', 'currentPlayer'],
     methods: {
-        // getData: function () {
-        //     fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-        //     .then(res => res.json())
-        //     .then(data => this.deck = data.cards)
-        // },
-        
+
         
         drawCard: function () {
-            if (this.deck.length == 0 ) {
-                this.getNewDeck() //this.deck not being used,only here as a second argument is needed 
-            }
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
             this.deck.splice(randomNumber, 1)
