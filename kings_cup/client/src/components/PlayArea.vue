@@ -5,6 +5,7 @@
         <img :src='currentCard.image' id="card">
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
+        <button v-on:click='getNewDeck'>Get a New Deck</button>
 
     </div>
   
@@ -32,7 +33,7 @@ export default {
         
         drawCard: function () {
             if (this.deck.length == 0 ) {
-                eventBus.$emit('need-new-deck', this.deck) //this.deck not being used,only here as a second argument is needed 
+                this.getNewDeck() //this.deck not being used,only here as a second argument is needed 
             }
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
@@ -46,6 +47,9 @@ export default {
             }
             
         },
+        getNewDeck: function () {
+            eventBus.$emit('need-new-deck', this.deck)
+        }
 
     },
 
