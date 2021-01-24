@@ -29,12 +29,12 @@ MVP: ✓
 
 Extensions :
 
-	- make a rule display on screen
+	- make a rule display on screen ✓
 	- Track number of drinks, display on graph with google charts
 	- Have drink buttons for each player to track number of drinks
 	- have drink buttons for (all boys, all girls etc)
 	- Be able to check/edit card rules (have house rules)
-	- Chose player colours to display next to their name (and be able to cycle through a selection)
+	- Players can chose a colour to represent them ✓
 	- Have fancy CSS
 
 Advanced Extensions: 

@@ -2,18 +2,21 @@
   <div id="app">
     <header-tile> </header-tile>
     <game-tile></game-tile>
+    <king-rules></king-rules>
   </div>
 </template>
 
 <script>
 import HeaderTile from './components/HeaderTile.vue'
 import GameTile from './components/GameTile.vue'
+import KingRules from './components/KingRules.vue'
 
 export default {
   name: 'App',
   components: {
     'header-tile' : HeaderTile,
-    'game-tile' : GameTile
+    'game-tile' : GameTile,
+    'king-rules': KingRules
   
   }
 }
