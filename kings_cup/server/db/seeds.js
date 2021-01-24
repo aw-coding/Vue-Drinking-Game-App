@@ -3,8 +3,8 @@ db.dropDatabase();
 
 db.default_rules.insertMany([
     {
-        name: "Waterfall",
-        text: "To perform a waterfall, each player starts drinking their beverage at the same time as the person to their left, starting with the player who drew the card. No player can stop drinking until the player before them stops.",
+        name: "Ace Race",
+        text: "The player who drew the card selects a word. the last person to type out the word takes a drink",
         value: "ACE"
     },
     {
@@ -19,11 +19,11 @@ db.default_rules.insertMany([
     },
     {
         name: "Floor",
-        text: "Last person to touch the floor with their hands must take a drink.",
+        text: "Last person visible on screen takes a drink",
         value: "4"
     },
     {
-        name: "Guys",
+        name: "Five is Guys",
         text: "All men playing take a drink.",
         value: "5"
     },
@@ -44,17 +44,17 @@ db.default_rules.insertMany([
     },
     {
         name: "Rhyme",
-        text: "The player who drew the card says a word, with players going clockwise each saying a word that rhyme with the original. The first person to fail to come up with a rhyming word that has not been used must drink.",
+        text: "The player who drew the card says a word, with players going in order saying a word that rhymes with the original. The first person to fail to come up with a rhyming word that has not been used must drink.",
         value: "9"
     },
     {
         name: "Categories",
-        text: "The player who drew the card chooses a category, with players going clockwise to name things that fall within the category. The first person to fail to come up with something that has not been said must drink.",
+        text: "The player who drew the card chooses a category, with players going in order to name things that fall within the category. The first person to fail to come up with something that has not been said must drink.",
         value: "10"
     },
     {
         name: "Everyone Drinks",
-        text: "Everyone must take a drink.",
+        text: "Everyone takes a drink.",
         value: "JACK"
     },
     {
@@ -64,7 +64,7 @@ db.default_rules.insertMany([
     },
     {
         name: "King's Cup",
-        text: "When each of the first 3 Kings are drawn, the person who drew the card puts some of their drink into the King's Cup at the center of the table. When the 4th King is drawn, the person who drew the 4th King must drink the contents of the King's Cup. In some variations, the first three people to pick a King card can also make a rule that must be followed until the next King is picked. Some common rules include Buffalo (must always use left hand), Thumbs (player puts their thumb on the table silently, last person to follow suit drinks), In bed (everyone has to say 'in bed' after every sentence), and Teeth (players can't show their teeth when they laugh).",
+        text: "Add a new random rule. The player who draws the 4th king takes a shot ",
         value: "KING"
     },
 
