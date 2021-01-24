@@ -19,7 +19,7 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
-            
+            kingCounter: 0, //the game should end when this reaches 4 
         }
     },
     props: ['numberOfPlayers', 'deck', 'currentPlayer'],
