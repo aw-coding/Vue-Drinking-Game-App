@@ -1,5 +1,5 @@
 <template>
-    <div id="player-tile" :class="player.isTurn">
+    <div id="player-tile" :class="[player.isTurn, player.colour]">
         <h3>{{player.name}}</h3>
         <!-- <button v-on:click='deletePlayer'>Delete Player</button> -->
         <img id="delete" v-on:click='deletePlayer' src="https://images.all-free-download.com/images/graphicthumb/round_red_close_button_5095.jpg" alt="">
@@ -25,9 +25,10 @@ export default {
 
 <style>
 #player-tile{
-    background: rgb(87, 87, 87);
+    
     text-align: center;
     border-radius: 10px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .true{
@@ -37,6 +38,37 @@ export default {
 #delete{
     width: 15px;
     border-radius: 50%;
+}
+.red{
+    background-color: red;
+    
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.purple{
+    background-color: purple;
+}
+.orange{
+    background-color: orange;
+}
+.pink{
+    background-color: pink;
+}
+.black{
+    background-color: black;
+}
+.white{
+    background-color: whitesmoke;
+}
+.grey{
+    background-color: grey;
 }
 
 </style>
