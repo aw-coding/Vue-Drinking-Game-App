@@ -33,7 +33,9 @@ export default {
     mounted () {        
         eventBus.$on('player-created', newPlayer => this.players.push(newPlayer))
 
-        eventBus.$on('player-deleted', playerToDelete => this.players.splice(playerToDelete, 1))
+        eventBus.$on('player-deleted', playerToDelete => {
+            const playerIndexNumber = this.players.indexOf(playerToDelete)
+            this.players.splice(playerIndexNumber, 1)})
 
         eventBus.$on('next-players-turn', playerTurn => {
             this.players.forEach(player => player.isTurn = "false")
