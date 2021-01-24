@@ -31,6 +31,9 @@ export default {
         
         
         drawCard: function () {
+            if (this.deck.length == 0 ) {
+                eventBus.$emit('need-new-deck', this.deck) //this.deck not being used,only here as a second argument is needed 
+            }
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
             this.deck.splice(randomNumber, 1)

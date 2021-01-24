@@ -50,6 +50,8 @@ export default {
         this.getData()
         eventBus.$on('player-created', payload => this.numberOfPlayers += 1)
         eventBus.$on('player-deleted', payload => this.numberOfPlayers -= 1)
+        eventBus.$on('need-new-deck', payload => this.getData())
+
 
     },    
     components: {
