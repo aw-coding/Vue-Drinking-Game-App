@@ -20,17 +20,13 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
-            turnCounter: 0
+            turnCounter: 0,
+            kingCounter: 0, //the game should end when this reaches 4 
         }
     },
     props: ['numberOfPlayers', 'deck'],
     methods: {
-        // getData: function () {
-        //     fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-        //     .then(res => res.json())
-        //     .then(data => this.deck = data.cards)
-        // },
-        
+
         
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
