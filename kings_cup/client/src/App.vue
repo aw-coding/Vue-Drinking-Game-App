@@ -26,7 +26,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 60px;
-  color: rgb(187, 187, 187);
+  color:whitesmoke;
 }
 body {
   background: rgb(14, 14, 14);

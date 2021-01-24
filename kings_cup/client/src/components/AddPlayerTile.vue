@@ -6,7 +6,19 @@
     <input v-model='playerName' required type='text' placeholder='name' >
     <button v-on:click='addPlayer'>Add Player</button>
 
-  </form>
+      <select v-model='playerColour' name="colours" id="player-colour">
+        <option value='red'>Red</option>
+        <option value='blue'>Blue</option>
+        <option value='yellow'>Yellow</option>
+        <option value='green'>Green</option>
+        <option value='purple'>Purple</option>
+        <option value='orange'>Orange</option>
+        <option value='pink'>Pink</option>
+        <option value='black'>Black</option>
+        <option value='white'>White</option>
+        <option value='grey'>Grey</option>
+      </select>
+    </form>
 
   </div>
 </template>
@@ -20,15 +32,17 @@ export default {
     data () {
       return {
         playerName: '',
+        playerColour: ''
       }
     },
     methods:{
       addPlayer: function (event) {
         event.preventDefault()
-        if (this.playerName) {
+        if (this.playerName && this.playerColour) {
         const newPlayer = {}
         newPlayer.isTurn = "false"
         newPlayer.name = this.playerName
+        newPlayer.colour = this.playerColour
         eventBus.$emit('player-created', newPlayer)
         this.playerName = ''}
       }
@@ -46,7 +60,7 @@ export default {
   background: rgb(38, 38, 38);
   text-align: center;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 10px;  
 }
 
 </style>
