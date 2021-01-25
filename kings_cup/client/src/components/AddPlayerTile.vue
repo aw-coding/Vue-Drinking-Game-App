@@ -63,6 +63,7 @@ export default {
         newPlayer.name = this.playerName
         newPlayer.colour = this.playerColour
         newPlayer.avatar = this.playerAvatar
+        newPlayer.drinks = 0
         eventBus.$emit('player-created', newPlayer)
         this.playerName = ''
         this.playerColour = ''

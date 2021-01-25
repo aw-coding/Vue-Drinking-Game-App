@@ -4,6 +4,7 @@
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
         <button v-on:click="changePage('rules-tile')">Rules</button>
+        <button v-on:click="changePage('stats-tile')">Stats</button>
 
         </div>
         <div id="game-tile">
@@ -11,6 +12,7 @@
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
         <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer"></play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
+        <stats-tile :chartData="chartData" v-if="currentPage==='stats-tile'"></stats-tile>
 
         </div>
         
@@ -25,6 +27,8 @@ import AddPlayerTile from '@/components/AddPlayerTile.vue'
 import PlayArea from '@/components/PlayArea.vue'
 import PlayerList from '@/components/PlayerList.vue'
 import RulesTile from '@/components/RulesTile.vue'
+import StatsTile from '@/components/StatsTile.vue'
+
 
 export default {
     name: 'game-tile',
@@ -33,7 +37,11 @@ export default {
             deck: null,
             currentPage: '',
             numberOfPlayers: 0,
-            currentPlayer: 0
+            currentPlayer: 0,
+            turnNumber: 0,
+            players: [],
+            chartData: [
+                ['Turn']]
         }
     },
     methods: {
@@ -60,6 +68,18 @@ export default {
                 this.currentPlayer = 0
             }
         })
+        eventBus.$on('player-created', player => this.chartData[0].push(player.name))
+
+        eventBus.$on('new-turn', players => {
+            this.players = players
+            this.turnNumber += 1
+            const turnData = []
+            turnData.push(this.turnNumber)
+            this.players.forEach(player => turnData.push(player.drinks))
+            this.chartData.push(turnData)
+
+            
+        })
 
 
     },    
@@ -68,6 +88,7 @@ export default {
         'play-area': PlayArea,
         'player-list': PlayerList,
         'rules-tile': RulesTile,
+        'stats-tile': StatsTile
 
     }
 

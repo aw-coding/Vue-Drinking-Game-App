@@ -29,6 +29,6 @@ export default {
   color:whitesmoke;
 }
 body {
-  background: rgb(14, 14, 14);
+  background-image: url(https://i.pinimg.com/originals/9f/c4/f5/9fc4f5915e50d5fe25d2e46004c78b7a.jpg);
 }
 </style>

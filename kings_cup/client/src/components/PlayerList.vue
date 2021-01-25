@@ -40,11 +40,14 @@ export default {
         eventBus.$on('next-players-turn', playerTurn => {
             this.players.forEach(player => player.isTurn = "false")
             this.players[playerTurn].isTurn = "true"
+            eventBus.$emit('new-turn', this.players)
             
-            })  
+            })
+
     },
     components: {
         'player-tile': PlayerTile,
+        
 
     }
     
