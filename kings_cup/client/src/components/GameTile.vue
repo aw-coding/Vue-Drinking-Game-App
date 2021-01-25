@@ -33,7 +33,6 @@ export default {
             deck: null,
             currentPage: '',
             numberOfPlayers: 0,
-            currentPlayer: 0
         }
     },
     methods: {
