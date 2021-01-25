@@ -11,6 +11,7 @@
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
         <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer"></play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
+        <stats-tile></stats-tile>
 
         </div>
         
@@ -25,6 +26,8 @@ import AddPlayerTile from '@/components/AddPlayerTile.vue'
 import PlayArea from '@/components/PlayArea.vue'
 import PlayerList from '@/components/PlayerList.vue'
 import RulesTile from '@/components/RulesTile.vue'
+import StatsTile from '@/components/StatsTile.vue'
+
 
 export default {
     name: 'game-tile',
@@ -68,6 +71,7 @@ export default {
         'play-area': PlayArea,
         'player-list': PlayerList,
         'rules-tile': RulesTile,
+        'stats-tile': StatsTile
 
     }
 

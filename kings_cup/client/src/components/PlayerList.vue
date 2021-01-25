@@ -41,10 +41,12 @@ export default {
             this.players.forEach(player => player.isTurn = "false")
             this.players[playerTurn].isTurn = "true"
             
-            })  
+            })
+
     },
     components: {
         'player-tile': PlayerTile,
+        
 
     }
     

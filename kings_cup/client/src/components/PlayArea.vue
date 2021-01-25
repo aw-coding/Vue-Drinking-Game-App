@@ -57,8 +57,6 @@ export default {
             if (this.currentCard.value == 'KING') {
             this.kingCounter += 1
             }
-        
-
         }, 
 
         
