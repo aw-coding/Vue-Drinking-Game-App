@@ -64,7 +64,7 @@ db.default_rules.insertMany([
     },
     {
         name: "King's Cup",
-        text: "Add a new random rule. The player who draws the 4th king takes a shot ",
+        text: "The player who picked this card can write a new rule for the rest of the game. The player who draws the 4th king takes a shot ",
         value: "KING"
     },
 

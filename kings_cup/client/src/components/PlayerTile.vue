@@ -35,7 +35,7 @@ export default {
     border-radius: 10px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     
-}
+}.
 #player-tile > h3{
     margin: 0px;
 }

@@ -18,13 +18,9 @@ export default {
     components: {
         GChart
     },
+    props: ['chartData'],
     data(){
       return{
-      players: [],
-      chartData: [
-        ['Turn'],
-         
-      ],
       chartOptions: {
         chart: {
           title: 'Company Performance',
@@ -34,10 +30,6 @@ export default {
     }
     },
     mounted(){
-      eventBus.$on('player-created', player => this.chartData[0].push(player.name))
-
-      eventBus.$on('new-turn', players => this.players = players)
-      
     }
 }
 </script>
