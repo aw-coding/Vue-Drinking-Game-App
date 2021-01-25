@@ -38,19 +38,14 @@ export default {
     props: ['numberOfPlayers', 'deck', 'currentPlayer'],
     methods: {
         drawCard: function () {
-            if (this.deck.length == 0 ) {
-                this.getNewDeck() //this.deck not being used,only here as a second argument is needed 
-            }
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
             this.checkIfKing()
-            // if (this.kingCounter == 3 && this.currentCard.value =='KING') {
-            //     this.finalKing()
-            // }
             this.deck.splice(randomNumber, 1)
+            eventBus.$emit('next-players-turn', this.currentPlayer)
             const rule = this.rules.filter(rule => this.currentCard.value === rule.value)
             this.currentRule = rule[0]
-            eventBus.$emit('next-players-turn', this.currentPlayer)
+
             
             
         },
@@ -83,7 +78,7 @@ export default {
 
 <style>
 #play-area{
-    background: rgb(38, 38, 38);
+    background-image: url(https://media.istockphoto.com/photos/overhead-view-of-brown-wooden-table-picture-id515309292?k=6&m=515309292&s=612x612&w=0&h=MHa8A5n1FAJqabhBH9hfhBQHr646Bw2MzBMs3uCtNX4=);
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -115,6 +110,8 @@ export default {
 }
     
 #decree-container{
+    display: flex;
+    
 }
 
 </style>
