@@ -4,6 +4,7 @@
         <img id="avatar" :src="player.avatar" alt="">
         <!-- <button v-on:click='deletePlayer'>Delete Player</button> -->
         <img id="delete" v-on:click='deletePlayer' src="https://images.all-free-download.com/images/graphicthumb/round_red_close_button_5095.jpg" alt="">
+        <button v-on:click='addDrink'>Drink</button>
   </div>
 </template>
 
@@ -17,6 +18,9 @@ export default {
     methods: {
         deletePlayer: function () {
             eventBus.$emit('player-deleted', this.player)
+        },
+        addDrink: function () {
+            this.player.drinks += 1
         }
 
     }

@@ -40,6 +40,7 @@ Extensions :
 
 Advanced Extensions: 
 
+	- Jester in footer that tells jokes
     - Track users alcohol intake and based on their alcohol intake and graph their estimated blood alcohol level
     - Add simple animations for countdowns, card select etc
     - Have jokes/quotes appear at the bottom of the screen during play (draw from joke api)
