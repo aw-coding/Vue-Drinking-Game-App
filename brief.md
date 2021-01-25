@@ -16,6 +16,7 @@ TODO:
 	- can't change tabs without restarting game ✓
 	- have current card show when switching tabs
 	- when you delete a player it messes up turn counter
+	- Have the game automatically restart when the fourth king has been drawn
 
 
 MVP: ✓

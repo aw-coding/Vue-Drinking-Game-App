@@ -32,7 +32,7 @@ export default {
         return {
             deck: null,
             currentPage: '',
-            numberOfPlayers: 0
+            numberOfPlayers: 0,
         }
     },
     methods: {
@@ -40,6 +40,8 @@ export default {
             fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
             .then(res => res.json())
             .then(data => this.deck = data.cards)
+            
+            
         },
 
         changePage: function (page) {

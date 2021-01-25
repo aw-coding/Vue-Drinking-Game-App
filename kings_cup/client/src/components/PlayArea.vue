@@ -7,6 +7,7 @@
         <p> {{currentRule.text}}</p>
         <p>Cards Remaining: {{this.deck.length}}</p>
         <button v-on:click='getNewDeck'>Get a New Deck</button>
+        <p>{{this.kingCounter}} King's Decrees have been made!</p>
 
     </div>
   
@@ -31,6 +32,10 @@ export default {
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
+            this.checkIfKing()
+            // if (this.kingCounter == 3 && this.currentCard.value =='KING') {
+            //     this.finalKing()
+            // }
             this.deck.splice(randomNumber, 1)
             const rule = this.rules.filter(rule => this.currentCard.value === rule.value)
             this.currentRule = rule[0]
@@ -42,15 +47,26 @@ export default {
             
         },
         getNewDeck: function () {
-            eventBus.$emit('need-new-deck', this.deck)
-        }
+            eventBus.$emit('need-new-deck', this.deck),
+            this.kingCounter = 0
+        },
+        checkIfKing: function () {
+            if (this.currentCard.value == 'KING') {
+            this.kingCounter += 1
+            }
+        
 
+        }, 
+
+        
     },
-
     mounted () {
             fetch('http://localhost:3000/api/rules')
             .then(res => res.json())
             .then(rules => this.rules = rules)
+
+
+ 
 
             
     }
