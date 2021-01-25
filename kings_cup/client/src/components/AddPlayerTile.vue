@@ -1,7 +1,7 @@
 <template>
-<div id="player-form">
+<div id="form-container">
   <h2>New Player</h2>
-  <form>
+  <form id="player-form">
     <label for="Name"></label>
     <input v-model='playerName' required type='text' placeholder='name'>
 
@@ -30,6 +30,7 @@
       <option value="https://avatarfiles.alphacoders.com/161/thumb-161909.jpg">Micky Mouse</option>
       <option value="https://avatarfiles.alphacoders.com/118/thumb-118721.jpg">Beaker</option>
       <option value="https://avatarfiles.alphacoders.com/154/thumb-154205.gif">gif</option>
+      <option value="https://avatarfiles.alphacoders.com/121/thumb-121989.png">Arnold</option>
     </select>
 
     <button v-on:click='addPlayer'>Add Player</button>
@@ -78,11 +79,16 @@ export default {
 </script>
 
 <style>
-#player-form{
+#form-container{
   background: rgb(38, 38, 38);
-  text-align: center;
   padding: 10px;
   border-radius: 10px;  
+}
+#player-form{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  align-content: center;
 }
 
 </style>
