@@ -20,9 +20,10 @@ export default {
     },
     data(){
       return{
+      players: [],
       chartData: [
-        ['Turn'],[0]
-        
+        ['Turn'],
+         
       ],
       chartOptions: {
         chart: {
@@ -34,6 +35,9 @@ export default {
     },
     mounted(){
       eventBus.$on('player-created', player => this.chartData[0].push(player.name))
+
+      eventBus.$on('new-turn', players => this.players = players)
+      
     }
 }
 </script>
