@@ -81,7 +81,7 @@ export default {
 
 <style>
 #form-container{
-  background: rgb(38, 38, 38);
+  background: rgba(0, 0, 0, 0.694);
   padding: 10px;
   border-radius: 10px;  
 }

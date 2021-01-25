@@ -98,16 +98,16 @@ export default {
 <style>
 #game-tile{
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 300px auto;
     
 }
 #nav > button{
-    background: rgb(14, 14, 14);
-    color: rgb(187, 187, 187);
+    background: rgba(14, 14, 14, 0.769);
+    color: rgb(255, 255, 255);
     padding: 10px;
     border: 2px solid grey;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 

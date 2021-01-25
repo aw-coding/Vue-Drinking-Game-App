@@ -1,10 +1,15 @@
 <template>
     <div id="player-tile" :class="[player.isTurn, player.colour]">
+        <img id="delete" v-on:click='deletePlayer' src="https://images.all-free-download.com/images/graphicthumb/round_red_close_button_5095.jpg" alt="">
         <h3>{{player.name}}</h3>
         <img id="avatar" :src="player.avatar" alt="">
-        <!-- <button v-on:click='deletePlayer'>Delete Player</button> -->
-        <img id="delete" v-on:click='deletePlayer' src="https://images.all-free-download.com/images/graphicthumb/round_red_close_button_5095.jpg" alt="">
-        <button v-on:click='addDrink'>Drink</button>
+       
+        <div id="drink-buttons">  
+        <button v-on:click='addDrink'>+</button>
+        <p>{{this.player.drinks}}</p>
+        <button v-on:click='removeDrink'>-</button>
+        </div> 
+        
   </div>
 </template>
 
@@ -21,6 +26,9 @@ export default {
         },
         addDrink: function () {
             this.player.drinks += 1
+        },
+        removeDrink: function() {
+            this.player.drinks -= 1
         }
 
     }
@@ -32,10 +40,15 @@ export default {
 #player-tile{ 
     margin: 10px;  
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     
-}.
+
+    
+}
 #player-tile > h3{
     margin: 0px;
 }
@@ -43,6 +56,10 @@ export default {
     width: 70px;
     border-radius: 50%;
     border: 2px solid black;
+}
+
+#drink-buttons >p{
+    margin: 0;
 }
 
 .false{
@@ -56,6 +73,7 @@ export default {
 }
 #delete{
     width: 15px;
+    height: 15px;
     border-radius: 50%;
 }
 .red{

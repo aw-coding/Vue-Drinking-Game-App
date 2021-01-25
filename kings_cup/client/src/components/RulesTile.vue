@@ -37,6 +37,9 @@ export default {
 #rules-tile{
     overflow-y: scroll;
     height: 700px;
+    background: rgba(0, 0, 0, 0.666);
+    border-radius: 5px;
+
     
 }
 

@@ -27,8 +27,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   margin-top: 60px;
   color:whitesmoke;
+
 }
 body {
-  background-image: url(https://i.pinimg.com/originals/9f/c4/f5/9fc4f5915e50d5fe25d2e46004c78b7a.jpg);
+  background-image: url(https://img.freepik.com/free-vector/seamless-gold-pattern-with-king-crowns-dark-black-background-illustration_136321-817.jpg?size=626&ext=jpg);
+  /* background-image: url(https://i.pinimg.com/originals/9f/c4/f5/9fc4f5915e50d5fe25d2e46004c78b7a.jpg); */
 }
 </style>
