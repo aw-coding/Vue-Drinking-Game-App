@@ -5,7 +5,6 @@
         <img :src='currentCard.image' id="card">
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
-        <p>Cards Remaining: {{this.deck.length}}</p>
         <button v-on:click='getNewDeck'>Get a New Deck</button>
         <p>{{this.kingCounter}} King's Decrees have been made!</p>
 
@@ -21,15 +20,15 @@ export default {
             currentCard: '',
             rules: null,
             currentRule: '',
-            turnCounter: 0,
             kingCounter: 0, //the game should end when this reaches 4 
         }
     },
-    props: ['numberOfPlayers', 'deck'],
+    props: ['numberOfPlayers', 'deck', 'currentPlayer'],
     methods: {
-
-        
         drawCard: function () {
+            if (this.deck.length == 0 ) {
+                this.getNewDeck() //this.deck not being used,only here as a second argument is needed 
+            }
             const randomNumber = Math.floor(Math.random()* this.deck.length)
             this.currentCard = this.deck[randomNumber]
             this.checkIfKing()
@@ -39,11 +38,8 @@ export default {
             this.deck.splice(randomNumber, 1)
             const rule = this.rules.filter(rule => this.currentCard.value === rule.value)
             this.currentRule = rule[0]
-            eventBus.$emit('next-players-turn', this.turnCounter)
-            this.turnCounter += 1
-            if(this.turnCounter === this.numberOfPlayers){
-                this.turnCounter = 0
-            }
+            eventBus.$emit('next-players-turn', this.currentPlayer)
+            
             
         },
         getNewDeck: function () {
