@@ -16,6 +16,7 @@ TODO:
 	- can't change tabs without restarting game ✓
 	- have current card show when switching tabs
 	- when you delete a player it messes up turn counter
+	- add remaining cards
 
 
 MVP: ✓
@@ -29,12 +30,12 @@ MVP: ✓
 
 Extensions :
 
-	- make a rule display on screen ✓
+	- Players can chose a colour to represent them ✓
+	- make a rule display on screen (King's Decrees section)
 	- Track number of drinks, display on graph with google charts
 	- Have drink buttons for each player to track number of drinks
 	- have drink buttons for (all boys, all girls etc)
 	- Be able to check/edit card rules (have house rules)
-	- Players can chose a colour to represent them ✓
 	- Have fancy CSS
 
 Advanced Extensions: 
@@ -44,6 +45,6 @@ Advanced Extensions:
     - Have jokes/quotes appear at the bottom of the screen during play (draw from joke api)
     - Have messages show at various levels - e.g "You're now not legal to drive", "Go to bed, you're drunk"
     - Enable player avatar selection
-    - Include other simple card games? E.g higher or lower, cheat
-	- Be able to use multiple decks
+	- Be able to use multiple decks ✓
     - Have really fancy CSS
+	- Include other simple card games? E.g higher or lower, cheat
