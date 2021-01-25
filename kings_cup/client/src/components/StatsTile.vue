@@ -1,10 +1,10 @@
 <template>
-<div>
+<div >
   <GChart
     type="LineChart"
     :data="chartData"
     :options="chartOptions"
-  />
+    id='chart' />
 </div>
   
 </template>
@@ -23,9 +23,12 @@ export default {
       return{
       chartOptions: {
         chart: {
-          title: 'Company Performance',
-          subtitle: 'Sales, Expenses, and Profit: 2014-2017', 
-        }
+          title: 'Kings Cup',
+          subtitle: 'Getting wrung in 2021', 
+          
+          
+
+        },
       }
     }
     },
@@ -36,5 +39,8 @@ export default {
 
 
 <style>
+#chart{
+  width: 600px;
+}
 
 </style>
