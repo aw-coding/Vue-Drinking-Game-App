@@ -33,10 +33,7 @@ export default {
             deck: null,
             currentPage: '',
             numberOfPlayers: 0,
-<<<<<<< HEAD
-=======
             currentPlayer: 0
->>>>>>> develop
         }
     },
     methods: {

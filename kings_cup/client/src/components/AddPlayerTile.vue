@@ -29,6 +29,7 @@
       <option value="https://avatarfiles.alphacoders.com/226/thumb-226760.jpg">Baby Groot</option>
       <option value="https://avatarfiles.alphacoders.com/161/thumb-161909.jpg">Micky Mouse</option>
       <option value="https://avatarfiles.alphacoders.com/118/thumb-118721.jpg">Beaker</option>
+      <option value="https://avatarfiles.alphacoders.com/154/thumb-154205.gif">gif</option>
     </select>
 
     <button v-on:click='addPlayer'>Add Player</button>
