@@ -1,8 +1,8 @@
 <template>
     <div>
-         <div id="header">
-      <img src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Jester"> 
-      <h1>Big Deck Energy Presents: King's Cup</h1>
+        <div id="header">
+      <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
+      <h1 class='title'>Big Deck Energy Presents: King's Cup</h1>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
@@ -111,31 +111,44 @@ export default {
 #nav > button{
     background: rgb(14, 14, 14);
     color: rgb(255, 255, 255);
-    padding: 10px;
+    padding-top: 5px;
     border: 2px solid grey;
     margin: 10px;
     border-radius: 5px;
     margin-right: 50px;
+    height: 30px;
 }
 #nav {
     /* margin-left: 290px; */
     display: flex;
+    grid-area: c;
+}
+
+#title{
+    grid-area: b;
+
+}
+
+#logo {
+    grid-area: a;
 }
 
 #header{
   display: grid;
+  grid-template-areas: 
+  "a b"
+  "a c";
   grid-template-columns: 300px auto;
   background: rgba(0, 0, 0, 0.686);
   margin: 5px;
   font-family: 'MedievalSharp', cursive;
   font-size: 26px;
-  text-align: center;
   height: 230px;
-  padding: 20px;
 }
 
 #header > h1{
-  margin:20px
+  margin:20px;
+  font-size: 60px;
 }
 
 #header > img{
