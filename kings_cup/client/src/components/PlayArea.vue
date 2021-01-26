@@ -1,19 +1,30 @@
 <template>
     <div id="play-area">
-        <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
-        <img :src='currentCard.image' id="card">
-        <p>Cards Remaining: {{deck.length}}</p>
-        <h2> {{currentRule.name}}</h2>
-        <p> {{currentRule.text}}</p>
-        <button v-on:click='getNewDeck'>Reset Deck</button>
+        <div>
+        <div id="deck">
+            <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
+            <img id="joker" v-if="currentCard === ''" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/the-joker-card-bigalbaloo-stock.jpg" alt="">
+            <img :src='currentCard.image' id="card">
+            <p>Cards Remaining: {{deck.length}}</p>
+        </div>
+        <div id="rules">
+            <h2> {{currentRule.name}}</h2>
+            <p> {{currentRule.text}}</p>
+        </div>
+        </div> 
+        <div id="reset">
+            <button v-on:click='getNewDeck'>Reset Deck</button>
+        </div>
         
-        <div id="decree-container">
+        
             
+        <div id="decree-container">
         <textarea placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
         <textarea placeholder="Decree 2" rows="5" cols="25" class="decree" v-if="kingCounter > 1"></textarea>
         <textarea placeholder="Decree 3" rows="5" cols="25" class="decree" v-if="kingCounter > 2"></textarea>  
         </div>
         
+    </div>
 
 
 
@@ -76,16 +87,20 @@ export default {
     /* background-image: url(https://media.istockphoto.com/photos/overhead-view-of-brown-wooden-table-picture-id515309292?k=6&m=515309292&s=612x612&w=0&h=MHa8A5n1FAJqabhBH9hfhBQHr646Bw2MzBMs3uCtNX4=); */
     padding: 10px;
     border-radius: 5px;
-    text-align: center;
-}
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: 80% 20%;
+    font-size: 26px;
+    font-family: 'MedievalSharp', cursive;
+    }
 #draw-button{
-    width: 102px;
+    width: 200px;
     border-radius: 5px;
     margin-right: 10px;
     
 }
 #card{
-    width: 100px
+    width: 200px
 }
 /* https://stackoverflow.com/questions/8571280/textarea-with-flexible-background-image-that-resizes-with-text-input */
 .decree{
@@ -102,13 +117,30 @@ export default {
     font-family: 'MedievalSharp', cursive;
     font-size: 26px;
     text-align: center;
-    image-rendering : optimizeQuality
+    image-rendering : optimizeQuality;
     /* padding: -25px; */
 }
     
 #decree-container{
     display: flex;
+    align-content: center;
     
+}
+
+#deck{
+    text-align: center;
+    
+}
+#joker{
+    width: 200px;
+    border-radius: 8px;
+}
+#rules{
+    height: 200px;
+    text-align: center
+}
+#reset{
+    text-align: right;
 }
 
 </style>
