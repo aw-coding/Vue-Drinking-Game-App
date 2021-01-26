@@ -31,6 +31,12 @@
       <option value="https://avatarfiles.alphacoders.com/118/thumb-118721.jpg">Beaker</option>
       <option value="https://avatarfiles.alphacoders.com/154/thumb-154205.gif">gif</option>
       <option value="https://avatarfiles.alphacoders.com/121/thumb-121989.png">Arnold</option>
+      <option value="https://avatarfiles.alphacoders.com/848/84848.jpg">Wonder Woman</option>
+      <option value="https://avatarfiles.alphacoders.com/842/84271.jpg">Darth Vader</option>
+      <option value="https://avatarfiles.alphacoders.com/471/47181.jpg">Rey</option>
+      <option value="https://avatarfiles.alphacoders.com/693/69307.png">Homer</option>
+      <option value="https://avatarfiles.alphacoders.com/968/96893.jpg">Black Widow</option>
+      <option value="https://avatarfiles.alphacoders.com/249/249498.jpg">Samoyed</option>
     </select>
 
     <button v-on:click='addPlayer'>Add Player</button>
