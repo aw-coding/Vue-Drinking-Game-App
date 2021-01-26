@@ -54,14 +54,17 @@ export default {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border: 25px solid #B88846;
-  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
+    
     
 
     
 }
 #player-tile > h3{
     margin: 0px;
+    color: wheat;
+    margin-right: 10px;
+    margin-left: 10px;
+    
 }
 #avatar{
     width: 70px;
@@ -78,7 +81,7 @@ export default {
 }
 
 .true{
-    border: 5px ridge rgb(211, 211, 211);
+    border: 5px ridge rgb(209, 159, 31);
     margin: -5px;
     
 }
@@ -93,7 +96,7 @@ export default {
     
 }
 .blue{
-    background-image: linear-gradient(rgb(81, 81, 240), black);
+    background-image: linear-gradient(rgb(29, 36, 221), black);
 }
 .yellow{
     background-image: linear-gradient(rgb(245, 245, 72), rgba(2, 2, 2, 0.995));

@@ -105,15 +105,14 @@ export default {
 <style>
 #game-tile{
     display: grid;
-    grid-template-columns: 300px auto;
-    
+    grid-template-columns: 300px auto;    
 }
     
 #nav > button{
     background: rgb(14, 14, 14);
-    color: rgb(255, 255, 255);
+    color: wheat;
     padding-top: 5px;
-    border: 2px solid grey;
+    border: 2px solid rgb(209, 159, 31);
     margin: 10px;
     border-radius: 5px;
     margin-right: 50px;
@@ -144,15 +143,14 @@ export default {
   margin: 5px;
   font-family: 'MedievalSharp', cursive;
   font-size: 26px;
-  height: 210px;
-  border: 25px solid #B88846;
-  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
+  height: 220px;
+  border: 2px solid #B88846;
 }
 
 #header > h1{
   margin:20px;
   font-size: 60px;
-  color: rgb(255, 227, 67);
+  color: rgb(209, 159, 31)
   
 
 }
@@ -161,7 +159,7 @@ export default {
   border-radius: 50%;
   border-width: 10px;
   border-style:dashed;
-  border-color: rgb(255, 227, 67);
+  border-color: rgb(209, 159, 31);
   height: 200px;
   width: 200px;
 }
