@@ -6,7 +6,9 @@
        
         <div id="drink-buttons">  
         <button v-on:click='addDrink'>+</button>
-        <p>{{this.player.drinks}}</p>
+        <!-- <p>{{this.player.drinks}}</p> -->
+        <p>{{this.player.roundDrinks}}</p>
+
         <button v-on:click='removeDrink'>-</button>
         </div> 
         
@@ -26,10 +28,17 @@ export default {
         },
         addDrink: function () {
             this.player.drinks += 1
+            this.player.roundDrinks += 1
         },
         removeDrink: function() {
             this.player.drinks -= 1
+            this.player.roundDrinks -= 1
+
         }
+
+    }, 
+    mounted() {
+        eventBus.$on('next-players-turn', payload => this.player.roundDrinks = 0)
 
     }
 

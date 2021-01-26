@@ -63,13 +63,14 @@ export default {
     methods:{
       addPlayer: function (event) {
         event.preventDefault()
-        if (this.playerName && this.playerColour) {
+        if (this.playerName && this.playerColour && this.playerAvatar) {
         const newPlayer = {}
         newPlayer.isTurn = "false"
         newPlayer.name = this.playerName
         newPlayer.colour = this.playerColour
         newPlayer.avatar = this.playerAvatar
         newPlayer.drinks = 0
+        newPlayer.roundDrinks = 0
         eventBus.$emit('player-created', newPlayer)
         this.playerName = ''
         this.playerColour = ''
