@@ -27,9 +27,6 @@ export default {
           subtitle: 'Getting wrung in 2021',
         },
         colors: [],
-        
-        
-        
       }
     }
     },

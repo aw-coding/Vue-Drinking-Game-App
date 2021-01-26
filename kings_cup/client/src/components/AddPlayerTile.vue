@@ -63,7 +63,7 @@ export default {
     methods:{
       addPlayer: function (event) {
         event.preventDefault()
-        if (this.playerName && this.playerColour) {
+        if (this.playerName && this.playerColour && this.playerAvatar) {
         const newPlayer = {}
         newPlayer.isTurn = "false"
         newPlayer.name = this.playerName
