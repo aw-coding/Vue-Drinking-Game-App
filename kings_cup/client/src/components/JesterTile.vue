@@ -1,8 +1,12 @@
 <template>
-    <div id='jester-container'>
-        <h2> JESTER TILE </h2>
-        <p>{{joke.setup}}</p>
-        <p>{{joke.delivery}}</p>
+    <div>
+        <div id='jester-container'>
+            <img src="https://image.shutterstock.com/image-vector/joker-playing-card-head-retro-260nw-1467820259.jpg" alt="Jester">
+           <div> <p>{{joke.setup}}</p>
+                  <p>{{joke.delivery}}</p>
+            </div>
+            <!-- <img src="https://image.shutterstock.com/image-vector/joker-playing-card-head-retro-260nw-1467820259.jpg" alt="Jester"> -->
+        </div>
     </div>
 </template>
 
@@ -33,8 +37,12 @@ export default {
 
 <style>
     #jester-container{
+        display: grid;
+        grid-template-columns: 20% 80;
         background: purple;
-        height: 200px;
+        font-family: 'MedievalSharp', cursive;
+        font-size: 26px;
+        text-align: center;
     }
 
 
