@@ -18,21 +18,23 @@ export default {
     components: {
         GChart
     },
-    props: ['chartData'],
+    props: ['chartData', 'chartColours'],
     data(){
       return{
       chartOptions: {
         chart: {
           title: 'Kings Cup',
-          subtitle: 'Getting wrung in 2021', 
-          
-          
-
+          subtitle: 'Getting wrung in 2021',
         },
+        colors: [],
+        
+        
+        
       }
     }
     },
     mounted(){
+      this.chartOptions.colors = this.chartColours
     }
 }
 </script>
