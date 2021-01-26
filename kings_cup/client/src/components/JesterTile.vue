@@ -5,7 +5,6 @@
            <div> <p>{{joke.setup}}</p>
                   <p>{{joke.delivery}}</p>
             </div>
-            <!-- <img src="https://image.shutterstock.com/image-vector/joker-playing-card-head-retro-260nw-1467820259.jpg" alt="Jester"> -->
         </div>
     </div>
 </template>
@@ -39,10 +38,17 @@ export default {
     #jester-container{
         display: grid;
         grid-template-columns: 20% 80;
+        grid-template-rows: 10% 90%;
         background: purple;
         font-family: 'MedievalSharp', cursive;
         font-size: 26px;
         text-align: center;
+    }
+    #jester-container > img{
+        border-radius: 50%;
+        border-width: 10px;
+        border-style:dashed;
+        border-color: rgb(255, 227, 67);
     }
 
 
