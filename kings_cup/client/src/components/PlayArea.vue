@@ -1,6 +1,5 @@
 <template>
     <div id="play-area">
-        <h1></h1>
         <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
         <img :src='currentCard.image' id="card">
         <p>Cards Remaining: {{deck.length}}</p>

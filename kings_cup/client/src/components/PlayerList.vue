@@ -59,11 +59,11 @@ export default {
 <style>
 #player-list{
     background: rgba(0, 0, 0, 0.694);
-    margin-right: 10px;
+    margin-right: 20px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 5px;
-    width: 300px
+    width: 250px
 }
 
 </style>
