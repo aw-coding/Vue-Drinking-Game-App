@@ -19,6 +19,19 @@ MongoClient.connect('mongodb://localhost:27017')
 .catch(console.error);
 
 
+MongoClient.connect('mongodb://localhost:27017')
+.then((client) => {
+  const db = client.db('game_rules');
+  const houseRulesCollection = db.collection('house_rules');
+  const houseRulesRouter = createRouter(houseRulesCollection);
+  app.use('/api/houserules', houseRulesRouter)
+})
+.catch(console.error);
+
+
+
+
+
 app.listen(3000, function () {
   console.log(`Listening on port ${ this.address().port }`);
 });
