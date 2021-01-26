@@ -1,5 +1,8 @@
 <template>
     <div>
+         <div id="header">
+      <img src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Jester"> 
+      <h1>Big Deck Energy Presents: King's Cup</h1>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
@@ -7,6 +10,8 @@
         <button v-on:click="changePage('stats-tile')">Stats</button>
 
         </div>
+    </div>
+    
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
@@ -104,13 +109,42 @@ export default {
     
 }
 #nav > button{
-    background: rgba(14, 14, 14, 0.769);
+    background: rgb(14, 14, 14);
     color: rgb(255, 255, 255);
     padding: 10px;
     border: 2px solid grey;
     margin: 10px;
     border-radius: 5px;
+    margin-right: 50px;
+}
+#nav {
+    /* margin-left: 290px; */
+    display: flex;
 }
 
+#header{
+  display: grid;
+  grid-template-columns: 300px auto;
+  background: rgba(0, 0, 0, 0.686);
+  margin: 5px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 26px;
+  text-align: center;
+  height: 230px;
+  padding: 20px;
+}
+
+#header > h1{
+  margin:20px
+}
+
+#header > img{
+  border-radius: 50%;
+  border-width: 10px;
+  border-style:dashed;
+  border-color: rgb(255, 227, 67);
+  height: 200px;
+  width: 200px;
+}
 
 </style>
