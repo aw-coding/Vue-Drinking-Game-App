@@ -2,18 +2,21 @@
   <div id="app">
     <header-tile> </header-tile>
     <game-tile></game-tile>
+    <jester-tile></jester-tile>
   </div>
 </template>
 
 <script>
 import HeaderTile from './components/HeaderTile.vue'
 import GameTile from './components/GameTile.vue'
+import JesterTile from './components/JesterTile.vue'
 
 export default {
   name: 'App',
   components: {
     'header-tile' : HeaderTile,
-    'game-tile' : GameTile
+    'game-tile' : GameTile,
+    'jester-tile': JesterTile
   
   }
 }
