@@ -1,7 +1,11 @@
 <template>
     <div>
         <div id='jester-container'>
+            <!-- <button @click="bounce = !bounce">Bounce Jester</button>
+            <transition name="bounce"> -->
             <img src="https://image.shutterstock.com/image-vector/joker-playing-card-head-retro-260nw-1467820259.jpg" alt="Jester">
+            
+            <!-- </transition>            -->
            <div id='joke'> <p>{{joke.setup}}</p>
                   <p>{{joke.delivery}}</p>
             </div>
@@ -42,19 +46,21 @@ export default {
         background: rgba(0, 0, 0, 0.686);
         margin: 5px;
         font-family: 'MedievalSharp', cursive;
-        font-size: 26px;
+        font-size: 30px;
         text-align: center;
-        height: 230px;
+        height: 210px;
         padding: 20px;
+        border: 2px solid #B88846;
     }
     #jester-container > img{
         border-radius: 50%;
         border-width: 10px;
         border-style:dashed;
-        border-color: rgb(255, 227, 67);
+        border-color: rgb(209, 159, 31);
         height: 200px;
     }
     #joke{
+        color: wheat;
 
     }
 

@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div id="header">
+      <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
+      <h1 class='title'>Big Deck Energy Presents: King's Cup</h1>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
@@ -7,6 +10,8 @@
         <button v-on:click="changePage('stats-tile')">Stats</button>
 
         </div>
+    </div>
+    
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
@@ -100,17 +105,63 @@ export default {
 <style>
 #game-tile{
     display: grid;
-    grid-template-columns: 300px auto;
-    
+    grid-template-columns: 300px auto;    
 }
+    
 #nav > button{
-    background: rgba(14, 14, 14, 0.769);
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    border: 2px solid grey;
+    background: rgb(14, 14, 14);
+    color: wheat;
+    padding-top: 5px;
+    border: 2px solid rgb(209, 159, 31);
     margin: 10px;
     border-radius: 5px;
+    margin-right: 50px;
+    height: 30px;
+}
+#nav {
+    /* margin-left: 290px; */
+    display: flex;
+    grid-area: c;
 }
 
+#title{
+    grid-area: b;
+
+}
+
+#logo {
+    grid-area: a;
+}
+
+#header{
+  display: grid;
+  grid-template-areas: 
+  "a b"
+  "a c";
+  grid-template-columns: 300px auto;
+  background: rgba(0, 0, 0, 0.686);
+  margin: 5px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 26px;
+  height: 230px;
+  border: 2px solid #B88846;
+}
+
+#header > h1{
+  margin:20px;
+  font-size: 60px;
+  color: rgb(209, 159, 31)
+  
+
+}
+
+#header > img{
+  border-radius: 50%;
+  border-width: 10px;
+  border-style:dashed;
+  border-color: rgb(209, 159, 31);
+  height: 200px;
+  width: 200px;
+}
 
 </style>

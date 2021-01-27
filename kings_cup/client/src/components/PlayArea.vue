@@ -83,7 +83,7 @@ export default {
 
 <style>
 #play-area{
-    background: rgba(0, 0, 0, 0.694);
+    background: rgba(0, 0, 0, 0.857);
     /* background-image: url(https://media.istockphoto.com/photos/overhead-view-of-brown-wooden-table-picture-id515309292?k=6&m=515309292&s=612x612&w=0&h=MHa8A5n1FAJqabhBH9hfhBQHr646Bw2MzBMs3uCtNX4=); */
     padding: 10px;
     border-radius: 5px;
@@ -127,6 +127,7 @@ export default {
 
 #deck{
     text-align: center;
+    color: wheat;
     
 }
 #joker{
@@ -135,7 +136,8 @@ export default {
 }
 #rules{
     height: 200px;
-    text-align: center
+    text-align: center;
+    color: wheat;
 }
 #reset{
     text-align: right;
