@@ -10,8 +10,7 @@
         <div id="rules">
             <h2> {{currentRule.name}}</h2>
             <p> {{currentRule.text}}</p>
-                    <p v-if="useRegularRules === true">You are playing with the regular rules.</p>
-                    <p v-if="useRegularRules === false">You are playing with custom rules.</p>
+
         </div>
         </div> 
         <div id="reset">
