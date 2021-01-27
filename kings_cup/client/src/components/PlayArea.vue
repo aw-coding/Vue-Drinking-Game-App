@@ -10,6 +10,8 @@
         <div id="rules">
             <h2> {{currentRule.name}}</h2>
             <p> {{currentRule.text}}</p>
+                    <p v-if="useRegularRules === true">You are playing with the regular rules.</p>
+                    <p v-if="useRegularRules === false">You are playing with custom rules.</p>
         </div>
         </div> 
         <div id="reset">
@@ -35,7 +37,7 @@ export default {
             kingCounter: 0, //the game should end when this reaches 4 
         }
     },
-    props: ['numberOfPlayers', 'deck', 'currentPlayer', 'kingCounter'],
+    props: ['numberOfPlayers', 'deck', 'currentPlayer', 'kingCounter', 'useRegularRules'],
     methods: {
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
@@ -50,20 +52,38 @@ export default {
             eventBus.$emit('need-new-deck', this.deck),
             this.kingCounter = 0
             this.currentCard = ""
+
+            if (this.useRegularRules === true) {
+            fetch('http://localhost:3000/api/rules')
+            .then(res => res.json())
+            .then(rules => this.rules = rules)}
+            else {
+            fetch('http://localhost:3000/api/houserules')    
+            .then(res => res.json())
+            .then(rules => this.rules = rules)}
         },
         checkIfKing: function () {
             if (this.currentCard.value == 'KING') {
             this.kingCounter += 1
             eventBus.$emit('king-counter', this.kingCounter)
             }
-        }, 
+        },
+        changeRules: function () {
+            if(this.usingRegularRules === true) {
+            this.usingRegularRules = false}
+            else { this.usingRegularRules = true}
+
 
         
     },
-    mounted () {
-            fetch('http://localhost:3000/api/rules')
-            .then(res => res.json())
-            .then(rules => this.rules = rules)
+    },
+
+
+        mounted() {
+        fetch('http://localhost:3000/api/rules')
+        .then(res => res.json())
+        .then(rules => this.rules = rules)
+
 
 
  
@@ -71,6 +91,8 @@ export default {
             
     }
 }
+
+
 </script>
 
 <style>

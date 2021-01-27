@@ -1,6 +1,6 @@
 <template>
 <div id="form-container">
-  <h2>New Player</h2>
+  <h2>Add New Player:</h2>
   <form id="player-form">
     <label for="Name"></label>
     <input v-model='playerName' required type='text' placeholder='name'>
@@ -19,7 +19,7 @@
         <option value='grey'>Grey</option>
       </select>
 
-    <select  id="avatar-select" name="avatar" v-model="playerAvatar" required>
+    <select id="avatar-select" name="avatar" v-model="playerAvatar" required>
       <option value="" selected disabled hidden>Avatar</option>
       <option value="https://avatarfiles.alphacoders.com/123/thumb-123713.jpg">Minion</option>
       <option value="https://avatarfiles.alphacoders.com/166/thumb-166320.jpg">Pikachu</option>
@@ -31,12 +31,12 @@
       <option value="https://avatarfiles.alphacoders.com/118/thumb-118721.jpg">Beaker</option>
       <option value="https://avatarfiles.alphacoders.com/154/thumb-154205.gif">gif</option>
       <option value="https://avatarfiles.alphacoders.com/121/thumb-121989.png">Arnold</option>
-      <option value="https://avatarfiles.alphacoders.com/848/84848.jpg">Wonder Woman</option>
-      <option value="https://avatarfiles.alphacoders.com/842/84271.jpg">Darth Vader</option>
-      <option value="https://avatarfiles.alphacoders.com/471/47181.jpg">Rey</option>
-      <option value="https://avatarfiles.alphacoders.com/693/69307.png">Homer</option>
-      <option value="https://avatarfiles.alphacoders.com/968/96893.jpg">Black Widow</option>
-      <option value="https://avatarfiles.alphacoders.com/249/249498.jpg">Samoyed</option>
+      <option value="https://avatarfiles.alphacoders.com/848/thumb-84848.jpg">Wonder Woman</option>
+      <option value="https://avatarfiles.alphacoders.com/842/thumb-84271.jpg">Darth Vader</option>
+      <option value="https://avatarfiles.alphacoders.com/471/thumb-47181.jpg">Rey</option>
+      <option value="https://avatarfiles.alphacoders.com/693/thumb-69307.png">Homer</option>
+      <option value="https://avatarfiles.alphacoders.com/968/thumb-96893.jpg">Black Widow</option>
+      <option value="https://avatarfiles.alphacoders.com/249/thumb-249498.jpg">Samoyed</option>
     </select>
 
     <button v-on:click='addPlayer'>Add Player</button>
@@ -91,6 +91,10 @@ export default {
   background: rgba(0, 0, 0, 0.694);
   padding: 10px;
   border-radius: 10px;  
+  display: flex;
+  color: wheat;
+  font-size: 20px;
+  font-family: 'MedievalSharp', cursive;
 }
 #player-form{
   display: flex;

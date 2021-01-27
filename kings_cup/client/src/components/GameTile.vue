@@ -4,13 +4,16 @@
       <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
       <div class='title'>
       <p>Big Deck Energy Presents:</p>
-      <h1 >King's Cup</h1>
+      <h1>King's Cup</h1>
       </div>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
         <button v-on:click="changePage('rules-tile')">Rules</button>
         <button v-on:click="changePage('stats-tile')">Stats</button>
+        <button v-on:click="changeRules()">Change Rules</button>
+   
+
 
         </div>
     </div>
@@ -23,7 +26,9 @@
             :kingCounter="kingCounter" 
             :numberOfPlayers="numberOfPlayers" 
             :deck="deck" 
-            :currentPlayer="currentPlayer">
+            :currentPlayer="currentPlayer"
+            :useRegularRules='useRegularRules'>
+
         </play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
         <stats-tile :players="players" :chartData="chartData" v-if="currentPage==='stats-tile'"></stats-tile>
@@ -57,6 +62,7 @@ export default {
             players: [],
             chartData: [
                 ['Turn']],
+            useRegularRules: true,    
             chartColours: []
         }
     },
@@ -71,7 +77,12 @@ export default {
 
         changePage: function (page) {
             this.currentPage = page
-        },    
+        },
+        changeRules: function () {
+            if(this.useRegularRules === true) {
+            this.useRegularRules = false}
+            else { this.useRegularRules = true}
+        }
     },
     mounted(){
         this.getData()
@@ -129,7 +140,7 @@ export default {
 #nav {
     display: flex;
     grid-area: c;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-right: 20%;
 
 
