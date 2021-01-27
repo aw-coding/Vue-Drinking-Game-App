@@ -143,7 +143,7 @@ export default {
   margin: 5px;
   font-family: 'MedievalSharp', cursive;
   font-size: 26px;
-  height: 220px;
+  height: 230px;
   border: 2px solid #B88846;
 }
 

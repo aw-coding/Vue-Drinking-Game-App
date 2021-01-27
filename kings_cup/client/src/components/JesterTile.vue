@@ -1,7 +1,11 @@
 <template>
     <div>
         <div id='jester-container'>
+            <!-- <button @click="bounce = !bounce">Bounce Jester</button>
+            <transition name="bounce"> -->
             <img src="https://image.shutterstock.com/image-vector/joker-playing-card-head-retro-260nw-1467820259.jpg" alt="Jester">
+            
+            <!-- </transition>            -->
            <div id='joke'> <p>{{joke.setup}}</p>
                   <p>{{joke.delivery}}</p>
             </div>
