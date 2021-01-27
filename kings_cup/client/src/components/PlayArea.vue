@@ -10,11 +10,11 @@
         <div id="rules">
             <h2> {{currentRule.name}}</h2>
             <p> {{currentRule.text}}</p>
-                    <p v-if="useRegularRules === true">You are playing with the regular rules.</p>
-                    <p v-if="useRegularRules === false">You are playing with custom rules.</p>
         </div>
         </div> 
         <div id="reset">
+                    <p v-if="useRegularRules === true">regular rules.</p>
+                    <p v-if="useRegularRules === false">custom rules.</p>
             <button v-on:click='getNewDeck'>Reset Deck</button>
         <div id="decree-container">
         <textarea  placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
