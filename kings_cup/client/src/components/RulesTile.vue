@@ -34,7 +34,7 @@
         <!-- <button v-on:click='updateRule'>Change Rule</button>  
     
         </li>
-    </ul>  --> -->
+    </ul>  -->
 
     <div v-if="rulesChoice === 'house-rules'">
     <house-rule-tile v-for="rule in houseRules" :rule='rule'></house-rule-tile>

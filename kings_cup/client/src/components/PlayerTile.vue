@@ -55,11 +55,16 @@ export default {
     justify-content: flex-end;
     align-items: center;
     
+    
 
     
 }
 #player-tile > h3{
     margin: 0px;
+    color: wheat;
+    margin-right: 10px;
+    margin-left: 10px;
+    
 }
 #avatar{
     width: 70px;
@@ -76,7 +81,7 @@ export default {
 }
 
 .true{
-    border: 5px ridge rgb(211, 211, 211);
+    border: 5px ridge rgb(209, 159, 31);
     margin: -5px;
     
 }
@@ -86,36 +91,36 @@ export default {
     border-radius: 50%;
 }
 .red{
-    background-image: linear-gradient(red, rgb(0, 0, 0));
+    background-image: linear-gradient(rgb(255, 70, 70), rgb(0, 0, 0));
     
     
 }
 .blue{
-    background-image: linear-gradient(blue, black);
+    background-image: linear-gradient(rgb(29, 36, 221), black);
 }
 .yellow{
-    background-image: linear-gradient(yellow, rgba(2, 2, 2, 0.584));
+    background-image: linear-gradient(rgb(245, 245, 72), rgba(2, 2, 2, 0.995));
 }
 .green{
-    background-image: linear-gradient(green, black);
+    background-image: linear-gradient(rgb(66, 181, 66), black);
 }
 .purple{
-    background-image: linear-gradient(purple, black);
+    background-image: linear-gradient(rgb(186, 65, 186), rgb(9, 4, 4));
 }
 .orange{
-    background-image: linear-gradient(orange, rgba(0, 0, 0, 0.249));
+    background-image: linear-gradient(rgb(244, 124, 50), rgb(0, 0, 0));
 }
 .pink{
-    background-image: linear-gradient(rgb(250, 152, 169), rgba(48, 20, 20, 0.947));
+    background-image: linear-gradient(rgb(223, 118, 163), rgb(77, 17, 17));
 }
 .black{
-    background-image: linear-gradient(rgba(58, 58, 58, 0.283), black);
+    background-image: linear-gradient(rgba(11, 11, 11, 0.982), rgb(36, 36, 36));
 }
 .white{
     background-image: linear-gradient(White, rgba(33, 33, 33, 0.701));
 }
 .grey{
-    background-image: linear-gradient(grey, rgba(0, 0, 0, 0.358));
+    background-image: linear-gradient(rgb(87, 87, 87), rgba(0, 0, 0, 0.947));
 }
 
 </style>
