@@ -14,15 +14,15 @@
         </div> 
         <div id="reset">
             <button v-on:click='getNewDeck'>Reset Deck</button>
-        </div>
-        
-        
-            
         <div id="decree-container">
         <textarea placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
         <textarea placeholder="Decree 2" rows="5" cols="25" class="decree" v-if="kingCounter > 1"></textarea>
         <textarea placeholder="Decree 3" rows="5" cols="25" class="decree" v-if="kingCounter > 2"></textarea>  
         </div>
+        </div>
+        
+        
+            
         
     </div>
 
@@ -111,17 +111,19 @@ export default {
     background-image: url(../assets/scroll_2.png);
     background-size: 100% 100%;
     background-repeat:no-repeat;
-    padding: 50px 30px 40px 20px;
+    padding: 50px 30px 40px 30px;
     font-family: 'MedievalSharp', cursive;
-    font-size: 26px;
+    font-size: 16px;
     text-align: center;
     image-rendering : optimizeQuality;
-    border: none
+    border: none;
+    width: 170px;
 }
     
 #decree-container{
     display: flex;
     align-content: center;
+    flex-direction: column;
     
 }
 

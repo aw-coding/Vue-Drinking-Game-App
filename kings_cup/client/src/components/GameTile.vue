@@ -2,7 +2,10 @@
     <div>
         <div id="header">
       <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
-      <h1 class='title'>Big Deck Energy Presents: King's Cup</h1>
+      <div class='title'>
+      <p>Big Deck Energy Presents:</p>
+      <h1 >King's Cup</h1>
+      </div>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
         <button v-on:click="changePage('play-area')">Play Area</button>
@@ -111,7 +114,6 @@ export default {
 #nav > button{
     background: rgb(14, 14, 14);
     color: wheat;
-    padding-top: 5px;
     border: 2px solid rgb(209, 159, 31);
     margin: 10px;
     border-radius: 5px;
@@ -119,19 +121,19 @@ export default {
     height: 30px;
 }
 #nav {
-    /* margin-left: 290px; */
     display: flex;
     grid-area: c;
-}
+    justify-content: center;
+    margin-right: 20%;
 
-#title{
-    grid-area: b;
 
+    
 }
 
 #logo {
     grid-area: a;
 }
+
 
 #header{
   display: grid;
@@ -143,16 +145,22 @@ export default {
   margin: 5px;
   font-family: 'MedievalSharp', cursive;
   font-size: 26px;
-  height: 230px;
+  height: 160px;
   border: 2px solid #B88846;
 }
 
-#header > h1{
-  margin:20px;
-  font-size: 60px;
-  color: rgb(209, 159, 31)
-  
-
+.title{
+    color: rgb(209, 159, 31);
+    text-align: center;
+    margin-right: 20%;
+    grid-area: b;
+}
+.title > h1{
+    margin: 0px
+}
+.title > p{
+    margin: 0px;
+    margin-top: 10px;
 }
 
 #header > img{
@@ -160,8 +168,10 @@ export default {
   border-width: 10px;
   border-style:dashed;
   border-color: rgb(209, 159, 31);
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+  margin-left: 60px
 }
 
 </style>

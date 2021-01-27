@@ -48,16 +48,24 @@ export default {
         font-family: 'MedievalSharp', cursive;
         font-size: 30px;
         text-align: center;
-        height: 210px;
-        padding: 20px;
+        height: 160px;
+        /* padding: 20px; */
         border: 2px solid #B88846;
     }
     #jester-container > img{
+        /* border-radius: 50%;
+        border-width: 10px;
+        border-style:dashed;
+        border-color: rgb(209, 159, 31);
+        height: 200px; */
         border-radius: 50%;
         border-width: 10px;
         border-style:dashed;
         border-color: rgb(209, 159, 31);
-        height: 200px;
+        height: 120px;
+        width: 120px;
+        margin: 10px;
+        margin-left: 60px
     }
     #joke{
         color: wheat;
