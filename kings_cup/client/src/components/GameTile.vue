@@ -11,8 +11,8 @@
         <button v-on:click="changePage('play-area')">Play Area</button>
         <button v-on:click="changePage('rules-tile')">Rules</button>
         <button v-on:click="changePage('stats-tile')">Stats</button>
-        <button v-on:click="changeRules()" v-if="useRegularRules === true"> Use Custom Rules</button>
-        <button v-on:click="changeRules()" v-else>Use Regular Rules</button>
+        <button v-on:click="changeRules()" v-if="useRegularRules === true"> Regular Rules</button>
+        <button v-on:click="changeRules()" v-else>Custom Rules</button>
    
 
 
