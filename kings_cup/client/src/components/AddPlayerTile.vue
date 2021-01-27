@@ -101,6 +101,19 @@ export default {
   flex-direction: column;
   width: 150px;
   align-content: center;
+  margin-left: 20px;
+  
+}
+#player-form > select{
+  
+
 }
 
+#player-form > input{
+
+}
+
+#player-form > button{
+  
+}
 </style>
