@@ -16,22 +16,13 @@
         <div id="reset">
             <button v-on:click='getNewDeck'>Reset Deck</button>
         <div id="decree-container">
-        <textarea placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
-        <textarea placeholder="Decree 2" rows="5" cols="25" class="decree" v-if="kingCounter > 1"></textarea>
-        <textarea placeholder="Decree 3" rows="5" cols="25" class="decree" v-if="kingCounter > 2"></textarea>  
+        <textarea  placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
+        <textarea  placeholder="Decree 2" rows="5" cols="25" class="decree" v-if="kingCounter > 1"></textarea>
+        <textarea  placeholder="Decree 3" rows="5" cols="25" class="decree" v-if="kingCounter > 2"></textarea>  
         </div>
         </div>
-        
-        
-            
-        
     </div>
 
-
-
-
-
-  
 </template>
 <script>
 import { eventBus } from '@/main.js'
@@ -45,7 +36,7 @@ export default {
             kingCounter: 0, //the game should end when this reaches 4 
         }
     },
-    props: ['numberOfPlayers', 'deck', 'currentPlayer', 'useRegularRules'],
+    props: ['numberOfPlayers', 'deck', 'currentPlayer', 'kingCounter', 'useRegularRules'],
     methods: {
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
@@ -73,6 +64,7 @@ export default {
         checkIfKing: function () {
             if (this.currentCard.value == 'KING') {
             this.kingCounter += 1
+            eventBus.$emit('king-counter', this.kingCounter)
             }
         },
         changeRules: function () {

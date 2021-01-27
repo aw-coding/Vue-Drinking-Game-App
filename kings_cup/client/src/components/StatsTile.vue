@@ -26,7 +26,7 @@ export default {
     props: ['chartData', 'players'],
     data(){
       return{
-      pieChartData: [['Task', 'Hours per Day'],
+      pieChartData: [['Name', 'Drinks'],
           ]
       ,
       chartOptions: {
