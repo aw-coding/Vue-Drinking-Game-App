@@ -18,7 +18,13 @@
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
-        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer"></play-area>
+        <play-area 
+            v-if="currentPage==='play-area'"
+            :kingCounter="kingCounter" 
+            :numberOfPlayers="numberOfPlayers" 
+            :deck="deck" 
+            :currentPlayer="currentPlayer">
+        </play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
         <stats-tile :players="players" :chartData="chartData" v-if="currentPage==='stats-tile'"></stats-tile>
 
@@ -42,6 +48,7 @@ export default {
     name: 'game-tile',
     data () {
         return {
+            kingCounter: 0,
             deck: null,
             currentPage: '',
             numberOfPlayers: 0,
@@ -78,8 +85,7 @@ export default {
             }
         })
         eventBus.$on('player-created', player => this.chartData[0].push(player.name))
-        // eventBus.$on('player-created', player => this.chartColours.push(player))
-
+        eventBus.$on('king-counter', kingCounter => this.kingCounter = kingCounter)
         eventBus.$on('new-turn', players => {
             this.players = players
             this.turnNumber += 1
