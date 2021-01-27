@@ -33,7 +33,7 @@ export default {
             kingCounter: 0, //the game should end when this reaches 4 
         }
     },
-    props: ['numberOfPlayers', 'deck', 'currentPlayer'],
+    props: ['numberOfPlayers', 'deck', 'currentPlayer', 'useRegularRules'],
     methods: {
         drawCard: function () {
             const randomNumber = Math.floor(Math.random()* this.deck.length)
@@ -57,10 +57,20 @@ export default {
 
         
     },
-    mounted () {
-            fetch('http://localhost:3000/api/rules')
-            .then(res => res.json())
-            .then(rules => this.rules = rules)
+    // mounted () { if (this.useRegularRules = true) {
+    //         fetch('http://localhost:3000/api/rules')
+    //         .then(res => res.json())
+    //         .then(rules => this.rules = rules)}
+    //         else {
+    //         fetch('http://localhost:3000/api/houserules')    
+    //         .then(res => res.json())
+    //         .then(rules => this.rules = rules)}
+
+        mounted() {
+        fetch('http://localhost:3000/api/rules')
+        .then(res => res.json())
+        .then(rules => this.rules = rules)
+
 
 
  

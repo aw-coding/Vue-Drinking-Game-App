@@ -5,12 +5,15 @@
         <button v-on:click="changePage('play-area')">Play Area</button>
         <button v-on:click="changePage('rules-tile')">Rules</button>
         <button v-on:click="changePage('stats-tile')">Stats</button>
+        <button v-on:click="changeRules()">Change Rules</button>
+   
+
 
         </div>
         <div id="game-tile">
         <player-list></player-list>
         <add-player-tile v-if="currentPage==='new-player'"></add-player-tile>
-        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer"></play-area>
+        <play-area v-if="currentPage==='play-area'" :numberOfPlayers="numberOfPlayers" :deck="deck" :currentPlayer="currentPlayer" :useRegularRules='useRegularRules'></play-area>
         <rules-tile v-if="currentPage==='rules-tile'"></rules-tile>
         <stats-tile :chartData="chartData" v-if="currentPage==='stats-tile'"></stats-tile>
 
@@ -41,7 +44,8 @@ export default {
             turnNumber: 0,
             players: [],
             chartData: [
-                ['Turn']]
+                ['Turn']],
+            useRegularRules: true,    
         }
     },
     methods: {
@@ -55,7 +59,12 @@ export default {
 
         changePage: function (page) {
             this.currentPage = page
-        },    
+        },
+        changeRules: function () {
+            if(this.useRegularRules === true) {
+            this.useRegularRules = false}
+            else { this.useRegularRules = true}
+        }
     },
     mounted(){
         this.getData()
