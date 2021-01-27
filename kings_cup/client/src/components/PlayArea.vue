@@ -13,8 +13,6 @@
         </div>
         </div> 
         <div id="reset">
-                    <p v-if="useRegularRules === true">regular rules.</p>
-                    <p v-if="useRegularRules === false">custom rules.</p>
             <button v-on:click='getNewDeck'>Reset Deck</button>
         <div id="decree-container">
         <textarea  placeholder="Decree 1" rows="5" cols="25" class="decree" v-if="kingCounter > 0"></textarea >
