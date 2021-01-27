@@ -1,6 +1,6 @@
 <template>
 <div id="form-container">
-  <h2>New Player</h2>
+  <h2>Add New Player:</h2>
   <form id="player-form">
     <label for="Name"></label>
     <input v-model='playerName' required type='text' placeholder='name'>
@@ -19,7 +19,7 @@
         <option value='grey'>Grey</option>
       </select>
 
-    <select  id="avatar-select" name="avatar" v-model="playerAvatar" required>
+    <select id="avatar-select" name="avatar" v-model="playerAvatar" required>
       <option value="" selected disabled hidden>Avatar</option>
       <option value="https://avatarfiles.alphacoders.com/123/thumb-123713.jpg">Minion</option>
       <option value="https://avatarfiles.alphacoders.com/166/thumb-166320.jpg">Pikachu</option>
@@ -91,6 +91,10 @@ export default {
   background: rgba(0, 0, 0, 0.694);
   padding: 10px;
   border-radius: 10px;  
+  display: flex;
+  color: wheat;
+  font-size: 20px;
+  font-family: 'MedievalSharp', cursive;
 }
 #player-form{
   display: flex;

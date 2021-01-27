@@ -4,7 +4,7 @@
       <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
       <div class='title'>
       <p>Big Deck Energy Presents:</p>
-      <h1 >King's Cup</h1>
+      <h1>King's Cup</h1>
       </div>
         <div id="nav">
         <button v-on:click="changePage('new-player')" >Add Players</button>
@@ -123,7 +123,7 @@ export default {
 #nav {
     display: flex;
     grid-area: c;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-right: 20%;
 
 
