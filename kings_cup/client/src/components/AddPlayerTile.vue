@@ -1,9 +1,9 @@
 <template>
 <div id="form-container">
-  <h2>Add New Player:</h2>
+  <h2>New Player:</h2>
   <form id="player-form">
     <label for="Name"></label>
-    <input v-model='playerName' required type='text' placeholder='name'>
+    <input v-model='playerName' required type='text' placeholder='name' id="name">
 
       <select v-model='playerColour' name="colours" id="player-colour">
         <option value="" selected disabled hidden>Colour</option>
@@ -38,11 +38,10 @@
       <option value="https://avatarfiles.alphacoders.com/968/thumb-96893.jpg">Black Widow</option>
       <option value="https://avatarfiles.alphacoders.com/249/thumb-249498.jpg">Samoyed</option>
     </select>
+    <button id="submit" v-on:click='addPlayer'>Add Player</button>
 
-    <button v-on:click='addPlayer'>Add Player</button>
-
-    <img :src="playerAvatar" alt="">
     </form>
+    <img :src="playerAvatar" alt="">
 
   </div>
 </template>
@@ -91,7 +90,6 @@ export default {
   background: rgba(0, 0, 0, 0.694);
   padding: 10px;
   border-radius: 10px;  
-  display: flex;
   color: wheat;
   font-size: 20px;
   font-family: 'MedievalSharp', cursive;
@@ -102,5 +100,26 @@ export default {
   width: 150px;
   align-content: center;
 }
+#name{
+  background: rgba(0, 0, 0, 0.546);
+  color: wheat;
+  margin: 5px
+}
+#player-colour{
+  background: rgba(0, 0, 0, 0.546);
+  color: wheat;
+  margin: 5px
+}
+#avatar-select{
+  background: rgba(0, 0, 0, 0.546);
+  color: wheat;
+  margin: 5px
+}
+#submit{
+  background: rgba(0, 0, 0, 0.546);
+  color: wheat;
+  margin: 5px
+}
+
 
 </style>
