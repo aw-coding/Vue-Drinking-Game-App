@@ -55,11 +55,16 @@ export default {
     justify-content: flex-end;
     align-items: center;
     
+    
 
     
 }
 #player-tile > h3{
     margin: 0px;
+    color: wheat;
+    margin-right: 10px;
+    margin-left: 10px;
+    
 }
 #avatar{
     width: 70px;
@@ -76,7 +81,7 @@ export default {
 }
 
 .true{
-    border: 5px ridge rgb(211, 211, 211);
+    border: 5px ridge rgb(209, 159, 31);
     margin: -5px;
     
 }
@@ -91,7 +96,7 @@ export default {
     
 }
 .blue{
-    background-image: linear-gradient(rgb(81, 81, 240), black);
+    background-image: linear-gradient(rgb(29, 36, 221), black);
 }
 .yellow{
     background-image: linear-gradient(rgb(245, 245, 72), rgba(2, 2, 2, 0.995));
