@@ -6,8 +6,9 @@
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
         <button v-on:click='getNewDeck'>Reset Deck</button>
-        <button v-on:click="changeRules">Change Rules</button>
-        <p> Using regular rules: {{usingRegularRules}}</p>
+        <p v-if="useRegularRules === true">You are playing with the regular rules.</p>
+        <p v-if="useRegularRules === false">You are playing with custom rules.</p>
+
         
         <div id="decree-container">
             
@@ -33,7 +34,6 @@ export default {
             rules: null,
             currentRule: '',
             kingCounter: 0, //the game should end when this reaches 4 
-            usingRegularRules: true,
         }
     },
     props: ['numberOfPlayers', 'deck', 'currentPlayer', 'useRegularRules'],
@@ -51,8 +51,8 @@ export default {
             eventBus.$emit('need-new-deck', this.deck),
             this.kingCounter = 0
             this.currentCard = ""
-            //added
-            if (this.usingRegularRules === true) {
+
+            if (this.useRegularRules === true) {
             fetch('http://localhost:3000/api/rules')
             .then(res => res.json())
             .then(rules => this.rules = rules)}
