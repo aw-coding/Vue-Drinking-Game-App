@@ -6,6 +6,8 @@
         <h2> {{currentRule.name}}</h2>
         <p> {{currentRule.text}}</p>
         <button v-on:click='getNewDeck'>Reset Deck</button>
+        <button v-on:click="changeRules">Change Rules</button>
+        <p> Using regular rules: {{usingRegularRules}}</p>
         
         <div id="decree-container">
             
@@ -31,6 +33,7 @@ export default {
             rules: null,
             currentRule: '',
             kingCounter: 0, //the game should end when this reaches 4 
+            usingRegularRules: true,
         }
     },
     props: ['numberOfPlayers', 'deck', 'currentPlayer', 'useRegularRules'],
@@ -48,23 +51,31 @@ export default {
             eventBus.$emit('need-new-deck', this.deck),
             this.kingCounter = 0
             this.currentCard = ""
+            //added
+            if (this.usingRegularRules === true) {
+            fetch('http://localhost:3000/api/rules')
+            .then(res => res.json())
+            .then(rules => this.rules = rules)}
+            else {
+            fetch('http://localhost:3000/api/houserules')    
+            .then(res => res.json())
+            .then(rules => this.rules = rules)}
         },
         checkIfKing: function () {
             if (this.currentCard.value == 'KING') {
             this.kingCounter += 1
             }
-        }, 
+        },
+        changeRules: function () {
+            if(this.usingRegularRules === true) {
+            this.usingRegularRules = false}
+            else { this.usingRegularRules = true}
+
 
         
     },
-    // mounted () { if (this.useRegularRules = true) {
-    //         fetch('http://localhost:3000/api/rules')
-    //         .then(res => res.json())
-    //         .then(rules => this.rules = rules)}
-    //         else {
-    //         fetch('http://localhost:3000/api/houserules')    
-    //         .then(res => res.json())
-    //         .then(rules => this.rules = rules)}
+    },
+
 
         mounted() {
         fetch('http://localhost:3000/api/rules')
@@ -78,6 +89,8 @@ export default {
             
     }
 }
+
+
 </script>
 
 <style>
