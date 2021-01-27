@@ -4,7 +4,7 @@
         <div id="deck">
             <img v-on:click='drawCard' src="https://filletfamilyblog.files.wordpress.com/2013/02/d0490860-0-large.jpg" alt="" id="draw-button">
             <img id="joker" v-if="currentCard === ''" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/the-joker-card-bigalbaloo-stock.jpg" alt="">
-            <img :src='currentCard.image' id="card">
+            <img v-if="currentCard != ''" :src='currentCard.image' id="card">
             <p>Cards Remaining: {{deck.length}}</p>
         </div>
         <div id="rules">
@@ -100,8 +100,14 @@ export default {
     
 }
 #card{
-    width: 200px
+    width: 196px;
 }
+
+#joker{
+    width: 192px;
+    border-radius: 8px;
+}
+
 /* https://stackoverflow.com/questions/8571280/textarea-with-flexible-background-image-that-resizes-with-text-input */
 .decree{
     
@@ -131,10 +137,6 @@ export default {
     text-align: center;
     color: wheat;
     
-}
-#joker{
-    width: 200px;
-    border-radius: 8px;
 }
 #rules{
     height: 200px;
