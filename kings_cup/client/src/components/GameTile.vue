@@ -3,7 +3,6 @@
         <div id="header">
       <img id='logo' src="https://image.shutterstock.com/image-vector/golden-crown-royal-king-cartoon-600w-126722057.jpg" alt="Crown"> 
       <div class='title'>
-      <p>Big Deck Energy Presents:</p>
       <h1>King's Cup</h1>
       </div>
         <div id="nav">
